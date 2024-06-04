@@ -1,11 +1,14 @@
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    bottom: 0;
-    right: 0;
-}
-.dropdown-menu.open {
-    display: flex;
-    flex-direction: column;
+    margin-left: auto;
+    .list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: white;
+    }
+    .list.open {
+        display: flex;
+        flex-direction: column;
+    }
 }

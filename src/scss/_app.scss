@@ -1,0 +1,13 @@
+.app-chatbot {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: auto 0 0 0;
+
+    &:has(.nav-bar[class*="closed"]) {
+        main {
+            display: none;
+        }
+    }
+}

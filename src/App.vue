@@ -1,6 +1,5 @@
 <template>
-  <section class="chatbot-window">
-    
+  <section class="app-chatbot">
     <nav-bar/>
 
     <main>
@@ -67,8 +66,4 @@ export default {
 
 <style>
   @import './scss/style.scss';
-
-  .chatbot-window:has(.nav-bar[class*="closed"]) main {
-    display: none;
-  }
 </style>

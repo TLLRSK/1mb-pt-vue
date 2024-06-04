@@ -1,17 +1,19 @@
 <template>
     <nav :class="['nav-bar', {open: isChatWindowOpen, closed: !isChatWindowOpen}]">
       <button @click="toggleChatWindow">-</button>
-      <img :src="chatbot.imgUrl" :alt="chatbot.name">
-      <p>{{ chatbot.name }}</p>
-      <dropdown-menu/>
+      <div class="chatbot-profile">
+        <img class="chatbot-img" :src="chatbot.imgUrl" :alt="chatbot.name">
+        <p class="chatbot-name">{{ chatbot.name }}</p>
+      </div>
+      <nav-dropdown-menu/>
     </nav>
 </template>
 
 <script>
-  import DropdownMenu from './dropdownMenu/DropdownMenu.vue'
+  import NavDropdownMenu from './navDropdownMenu/NavDropdownMenu.vue'
   export default {
       components: {
-          DropdownMenu
+          NavDropdownMenu
       },
       data() {
           return {

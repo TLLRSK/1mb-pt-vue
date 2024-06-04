@@ -47,7 +47,7 @@ Requisites:
 
 - Send messages 🔨
     - user 🔨
-    - bot
+    - bot 🔨
 - Minimize Chatbot Container 🔨
 - Toggle Dropdown 🔨
 
@@ -56,11 +56,11 @@ Requisites:
 Sending message data:
     input > app > chat
 
-* Minimize Chatbot Container *
-1. Toggling display class by clicking minimize button.
-2. On "close" > hide main element.
+* Minimize Chatbot Container * ✔
+1. Toggling display class by clicking minimize button. ✔
+2. On "close" > hide main element. ✔
 
-* Toggle Dropdown *
-1. Toggling display class by clicking toggle menu button.
+* Toggle Dropdown * ✔
+1. Toggling display class by clicking toggle menu button. ✔
 2. Change button appearance ("open" and "close")
-3. Change list style to absolute.
+3. Change list style to absolute. ✔

@@ -1,10 +1,14 @@
 <template>
-    <button @click="toggleDropdownMenu">MENU</button>
-    <ul :class="['dropdown-menu', {'open': isMenuOpen}]">
-        <li v-for="option in menuOptions" :key="option">
-            {{ option.text }}
-        </li>
-    </ul>
+    <div class="dropdown-menu">
+        <button class="btn--dropdown-menu" @click="toggleDropdownMenu">
+        {{ isMenuOpen ? 'CLOSE' : 'OPEN' }}
+        </button>
+        <ul :class="['list', {'open': isMenuOpen}]">
+            <li class="list-item-" v-for="option in menuOptions" :key="option">
+                {{ option.text }}
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script>
