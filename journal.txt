@@ -18,7 +18,7 @@ Requisites:
 - The design does not have to be super sophisticated, but it must at least responsive and full-screen on mobile phones.
 
 
-** Components **
+** COMPONENTS **
 - nav
     - buttonMinimize 🔨
     - chatbotName + chatbotImage 🔨
@@ -43,7 +43,24 @@ Requisites:
         - swiper carousel
 - footer
 
-** Tasks **
+** METHODS **
+
+- Send messages 🔨
+    - user 🔨
+    - bot
+- Minimize Chatbot Container 🔨
+- Toggle Dropdown 🔨
 
 
+* Send Messages *
+Sending message data:
+    input > app > chat
 
+* Minimize Chatbot Container *
+1. Toggling display class by clicking minimize button.
+2. On "close" > hide main element.
+
+* Toggle Dropdown *
+1. Toggling display class by clicking toggle menu button.
+2. Change button appearance ("open" and "close")
+3. Change list style to absolute.

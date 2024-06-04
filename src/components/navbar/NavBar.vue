@@ -1,9 +1,8 @@
 <template>
-    <nav :class="{open: isChatWindowOpen, closed: !isChatWindowOpen}">
+    <nav :class="['nav-bar', {open: isChatWindowOpen, closed: !isChatWindowOpen}]">
       <button @click="toggleChatWindow">-</button>
       <img :src="chatbot.imgUrl" :alt="chatbot.name">
       <p>{{ chatbot.name }}</p>
-      <button @click="toggleDropdownMenu">MENU</button>
       <dropdown-menu/>
     </nav>
   </template>
@@ -28,9 +27,6 @@
             toggleChatWindow() {
                 this.isChatWindowOpen = !this.isChatWindowOpen;
             },
-            toggleDropdownMenu() {
-                this.isDropdownMenuOpen = !this.isDropdownMenuOpen;
-            }
         }
     }
   </script>
@@ -42,6 +38,7 @@
     padding: 10px;
     background-color: #f5f5f5;
     border-bottom: 1px solid #ccc;
+    position: relative;
   }
   
   button {

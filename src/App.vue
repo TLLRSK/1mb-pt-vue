@@ -1,19 +1,21 @@
 <template>
-  <div class="chat-window">
-    <nav-bar
-    />
+  <section class="chatbot-window">
+    
+    <nav-bar/>
 
-    <chat-container 
+    <main>
+      <chat-container 
       :messagesLog="messagesLog"
-    />
+      />
 
-    <chat-questions-carousel
-    />
+      <chat-questions-carousel
+      />
 
-    <message-input
-      @send-message="sendMessage"
-    />
-  </div>
+      <message-input
+        @send-message="sendMessage"
+      />
+    </main>
+  </section>
 </template>
 
 <script>
@@ -27,7 +29,6 @@ export default {
   components: {
     NavBar,
     ChatContainer,
-    MessageImageCard,
     ChatQuestionsCarousel,
     MessageInput,
   },
@@ -55,4 +56,7 @@ export default {
 </script>
 
 <style>
+.chatbot-window:has(.nav-bar[class*="closed"]) main {
+  display: none;
+}
 </style>
