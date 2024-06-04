@@ -1,0 +1,15 @@
+[class*="message--"] {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.message--user {
+    text-align: right;
+    background-color: #e1ffc7;
+    
+  }
+  
+  .message--chatbot {
+    text-align: left;
+    background-color: #f1f1f1;
+  }

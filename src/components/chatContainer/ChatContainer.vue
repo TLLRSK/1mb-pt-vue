@@ -1,22 +1,33 @@
 <template>
     <ul class="chat-container">
-        <li :class="['chat-message', {'message-user': message.author === 'user', 'message-chatbot': message.author === 'chatbot' }]" v-for="message in messages" :key="message">
-            {{ message.content }}
-        </li>
-    </ul>
+      <message
+        v-for="(message, index) in messages"
+        :key="index"
+        :message-author="message.author"
+        :message-content="message.content"
+      />
+</ul>
 </template>
 
 <script>
-    export default {
+
+import Message from '../messages/Message.vue';
+
+export default {
+        components: {
+            Message,
+        },
         props: {
             messagesLog: {
-                type: Array,
+            type: Array,
+            required: true,
             },
         },
         data() {
             return {
-                messages: this.messagesLog,
-            }
-        }
-    }
+            messages: this.messagesLog,
+            };
+        },
+    };
 </script>
+  
