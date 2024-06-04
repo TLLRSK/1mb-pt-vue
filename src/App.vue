@@ -1,9 +1,18 @@
 <template>
   <div class="chat-window">
-    <Nav></Nav>
-    <chat-container></chat-container>
-    <chat-questions-carousel/>
-    <message-input/>
+    <nav-bar
+    />
+
+    <chat-container 
+      :messagesLog="messagesLog"
+    />
+
+    <chat-questions-carousel
+    />
+
+    <message-input
+      @send-message="sendMessage"
+    />
   </div>
 </template>
 
@@ -12,11 +21,11 @@ import ChatContainer from './components/chatContainer/ChatContainer.vue';
 import ChatQuestionsCarousel from './components/chatContainer/ChatQuestionsCarousel.vue';
 import MessageInput from './components/messageInput/MessageInput.vue';
 import MessageImageCard from './components/messages/MessageImageCard.vue';
-import Nav from './components/nav/Nav.vue';
+import NavBar from './components/navbar/NavBar.vue';
 
 export default {
   components: {
-    Nav,
+    NavBar,
     ChatContainer,
     MessageImageCard,
     ChatQuestionsCarousel,
@@ -24,10 +33,23 @@ export default {
   },
   data() {
     return {
-      messagesLog: []
+      messagesLog: [
+        {
+            author: "user",
+            content: "lorem ipsum lorem.",
+        },
+        {
+            author: "chatbot",
+            content: "lorem ipsum lorem ipsum.",
+        },
+      ]
     };
   },
   methods: {
+    sendMessage(message) {
+        this.messagesLog.push(message);
+        console.log(this.messagesLog)
+    },
   }
 };
 </script>

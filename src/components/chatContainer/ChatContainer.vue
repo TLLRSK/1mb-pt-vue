@@ -11,16 +11,11 @@
         props: {
             messagesLog: {
                 type: Array,
-            }
+            },
         },
         data() {
             return {
-                messages: [
-                    {
-                        author: "user",
-                        content: "lorem ipsum lorem.",
-                    }
-                ],
+                messages: this.messagesLog,
             }
         }
     }

@@ -1,17 +1,22 @@
 <template>
-    <form action="send-message">
-        <input type="text" placeholder="Escribe tu pregunta">
-        <button-send-message></button-send-message>
+    <form>
+        <input type="text" placeholder="Escribe tu pregunta" v-model="messageContent">
+        <button @click.prevent="sendMessage">Send</button>
     </form>
 </template>
 
 <script>
-    import ButtonSendMessage from '../buttons/ButtonSendMessage.vue';
     export default {
-        components: {ButtonSendMessage},
         data() {
             return {
-
+                messageContent: "",
+                author: "user",
+            }
+        },
+        methods: {
+            sendMessage()  {
+                const message = { content: this.messageContent, author: this.author}
+                this.$emit('send-message', message);
             }
         }
     }
