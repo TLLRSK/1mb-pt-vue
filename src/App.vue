@@ -4,19 +4,20 @@
     <div class="messages">
       <message-image-card></message-image-card>
     </div>
-    <div class="input-area">
-    </div>
+    <message-input></message-input>
   </div>
 </template>
 
 <script>
+import MessageInput from './components/messageInput/MessageInput.vue';
 import MessageImageCard from './components/messages/MessageImageCard.vue';
 import Nav from './components/nav/Nav.vue';
 
 export default {
   components: {
     Nav,
-    MessageImageCard
+    MessageImageCard,
+    MessageInput,
   },
   data() {
     return {
