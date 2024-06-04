@@ -1,0 +1,49 @@
+Brieffing:
+
+Create a chat window
+
+
+Framework: Vue 3.0;
+
+Requisites:
+- The messages from the chatbot must be different from the user ones, positioning them right and left its the easiest way to fullfill this one
+- The image and the name of the chatbot must appear so that the user knows at all times who they are talking to.
+- The chat window must have a drop-down menu to select options such as forgetting user data, changing the language or accessing the privacy policy.
+
+- Implement:
+    - Image-card messages
+    - Chat Buttons
+    - Other kind of messages or enhancements you want to implement and think would be a nice implementation
+
+- The design does not have to be super sophisticated, but it must at least responsive and full-screen on mobile phones.
+
+
+** Components **
+- nav
+    - buttonMinimize 🔨
+    - chatbotName + chatbotImage 🔨
+    - dropdownMenu 🔨
+        - dropdownItem 🔨
+
+- chatContainer
+    - chattButtonCarousel 🔨
+        - swiper carousel 🔨
+    - buttonChat 🔨
+    - buttonChatArrow 🔨
+
+    - messageForm:
+        - input text 🔨
+        - send button 🔨
+
+    - message (user & bot) 🔨
+    - messageImageCard: 🔨
+        - image
+        - text 
+        - link button 🔨
+        - swiper carousel
+- footer
+
+** Tasks **
+
+
+
