@@ -4,11 +4,13 @@
     <div class="messages">
       <message-image-card></message-image-card>
     </div>
-    <message-input></message-input>
+    <chat-questions-carousel/>
+    <message-input/>
   </div>
 </template>
 
 <script>
+import ChatQuestionsCarousel from './components/chatContainer/ChatQuestionsCarousel.vue';
 import MessageInput from './components/messageInput/MessageInput.vue';
 import MessageImageCard from './components/messages/MessageImageCard.vue';
 import Nav from './components/nav/Nav.vue';
@@ -18,6 +20,7 @@ export default {
     Nav,
     MessageImageCard,
     MessageInput,
+    ChatQuestionsCarousel,
   },
   data() {
     return {

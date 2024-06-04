@@ -37,8 +37,8 @@ Requisites:
 
     - message (user & bot) 🔨
     - messageImageCard: 🔨
-        - image
-        - text 
+        - image 🔨
+        - text 🔨
         - link button 🔨
         - swiper carousel
 - footer

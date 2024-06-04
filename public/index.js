@@ -1,4 +1,9 @@
-export default dataNews = [
+const chatbotProfile = {
+    name: "Bill",
+    imgUrl: "https://placehold.jp/16x16.png",
+}
+
+const dataNews = [
     {
         imgUrl: "",
         title: "article title",
@@ -18,3 +23,5 @@ export default dataNews = [
         articleUrl: "",
     },
 ]
+
+export default {chatbotProfile, dataNews};
