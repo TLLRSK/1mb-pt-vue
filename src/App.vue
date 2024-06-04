@@ -43,14 +43,24 @@ export default {
             author: "chatbot",
             content: "lorem ipsum lorem ipsum.",
         },
-      ]
+      ],
+      chatbotResponse: {
+        author: "chatbot",
+        content: "random response from chatbot"
+      }
     };
   },
   methods: {
     sendMessage(message) {
         this.messagesLog.push(message);
         console.log(this.messagesLog)
+        setTimeout(() => {
+          this.sendResponse();
+        }, 1000)
     },
+    sendResponse() {
+      this.messagesLog.push(this.chatbotResponse);
+    }
   }
 };
 </script>
