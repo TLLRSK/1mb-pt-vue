@@ -20,7 +20,7 @@
 
 <script>
 import ChatContainer from './components/chatContainer/ChatContainer.vue';
-import ChatQuestionsCarousel from './components/chatContainer/ChatQuestionsCarousel.vue';
+import ChatQuestionsCarousel from './components/questionsCarousel/QuestionsCarousel.vue';
 import MessageInput from './components/messageInput/MessageInput.vue';
 import MessageImageCard from './components/messages/MessageImageCard.vue';
 import NavBar from './components/navbar/NavBar.vue';
@@ -66,7 +66,9 @@ export default {
 </script>
 
 <style>
-.chatbot-window:has(.nav-bar[class*="closed"]) main {
-  display: none;
-}
+  @import './scss/style.scss';
+
+  .chatbot-window:has(.nav-bar[class*="closed"]) main {
+    display: none;
+  }
 </style>

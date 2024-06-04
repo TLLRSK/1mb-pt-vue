@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <ul>
+    <div class="swiper">
+        <ul class="questions-carousel">
             <li v-for="question in questions" :key="question">
                 <button>{{question }}</button>
             </li>
@@ -22,6 +22,3 @@
         }
     }
 </script>
-
-<style>
-</style>

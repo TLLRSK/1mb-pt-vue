@@ -27,17 +27,3 @@
         }
     }
 </script>
-
-<style>
-    .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        bottom: 0;
-        right: 0;
-    }
-    .dropdown-menu.open {
-        display: flex;
-        flex-direction: column;
-    }
-</style>
