@@ -12,7 +12,7 @@
 </template>
 
 <script>
-
+    import MessageImageCard from '../messages/MessageImageCard.vue'
     export default {
         data() {
             return {

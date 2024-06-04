@@ -1,14 +1,13 @@
 <template>
-    <div>
-      <swiper-container
-        :slides-per-view="3"
-        navigation="true"
-      >
+    <swiper-container
+    :slides-per-view="3"
+    navigation="true"
+    >
         <swiper-slide v-for="(question, index) in questions" :key="index">
-          <button>{{ question }}</button>
+            <button>{{ question }}</button>
         </swiper-slide>
-      </swiper-container>
-    </div>
+    </swiper-container>
+    
   </template>
   
   <script>

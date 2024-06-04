@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import NavDropdownMenu from './navDropdownMenu/NavDropdownMenu.vue'
+  import NavDropdownMenu from './NavDropdownMenu.vue'
   export default {
       components: {
           NavDropdownMenu

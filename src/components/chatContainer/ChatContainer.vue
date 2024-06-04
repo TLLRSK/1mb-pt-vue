@@ -6,16 +6,19 @@
         :message-author="message.author"
         :message-content="message.content"
       />
+      <message-image-card></message-image-card>
 </ul>
 </template>
 
 <script>
 
 import Message from '../messages/Message.vue';
+import MessageImageCard from '../messages/MessageImageCard.vue';
 
 export default {
         components: {
             Message,
+            MessageImageCard,
         },
         props: {
             messagesLog: {
