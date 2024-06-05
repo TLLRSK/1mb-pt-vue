@@ -1,5 +1,5 @@
 <template>
-    <ul class="chat-container" ref="chatContainer">
+    <ul class="messages-container" ref="messagesContainer">
       <template v-for="(message, index) in messages" :key="index">
         <message
           v-if="message.type === 'default'"
@@ -39,9 +39,9 @@
     },
     methods: {
       scrollToBottom() {
-        const chatContainer = this.$refs.chatContainer;
-        if (chatContainer) {
-          chatContainer.scrollTop = chatContainer.scrollHeight;
+        const messagesContainer = this.$refs.messagesContainer;
+        if (messagesContainer) {
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
       },
     },

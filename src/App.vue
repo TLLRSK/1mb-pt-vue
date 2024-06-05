@@ -1,8 +1,7 @@
 <template>
   <section 
     :class="['app-chatbot', {'closed': !isChatbotOpen}]"
-    v-if="isChatbotOpen"
-  >
+    v-if="isChatbotOpen">
 
       <div class="chatbot-container--hidden" v-if="!isChatbotVisible">
         <button class="btn--show-chatbot" @click="toggleChatbotWindow">
@@ -16,7 +15,7 @@
       <div class="chatbot-container--visible" v-else>
         <nav-bar @toggle-chatbot="toggleChatbotWindow"/>
 
-        <chat-container 
+        <messages-container 
           :messagesLog="messagesLog"
         />
 
@@ -25,6 +24,7 @@
         <message-input @send-message="sendMessage" />
 
         <chatbot-footer></chatbot-footer>
+
       </div>
   </section>
 </template>
@@ -32,7 +32,7 @@
 <script>
 
 import NavBar from './components/navbar/NavBar.vue';
-import ChatContainer from './components/chatContainer/ChatContainer.vue';
+import MessagesContainer from './components/messagesContainer/MessagesContainer.vue';
 import ChatQuestionsCarousel from './components/questionsCarousel/QuestionsCarousel.vue';
 import MessageInput from './components/messageInput/MessageInput.vue';
 import ChatbotFooter from './components/footer/ChatbotFooter.vue';
@@ -40,7 +40,7 @@ import ChatbotFooter from './components/footer/ChatbotFooter.vue';
 export default {
   components: {
     NavBar,
-    ChatContainer,
+    MessagesContainer,
     ChatQuestionsCarousel,
     MessageInput,
     ChatbotFooter,
