@@ -21,21 +21,24 @@
 
   &--image-card {
     padding: 0;
-    overflow: hidden;
-    .swiper-slide, 
-    .swiper-slide-active,
-    .swiper-slide-prev, 
-    .swiper-slide-next {
+    .article {
       display: flex;
       flex-direction: column;
-      padding: $p--m;
       gap: $gap--s;
-    }
-    .img {
-      width: 100%;
-    }
-    .link {
-      width: 100%;
+      margin: 0;
+      &-img {
+        margin: $margin--s;
+      }
+      &-content {
+        padding: 0 $p--s;
+      }
+      &-link {
+        width: 100%;
+        border-top: 1px solid $gray;
+        padding: $p--s;
+        color: $black;
+        font-weight: 600;
+      }
     }
   }
 }

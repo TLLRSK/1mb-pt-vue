@@ -33,13 +33,14 @@
   z-index: 1;
 }
 .swiper {
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   position: relative;
   overflow: hidden;
   list-style: none;
   padding: 0;
   /* Fix of Webkit flickering */
+  height: fit-content;
   z-index: 1;
   display: block;
 }
@@ -49,7 +50,7 @@
 .swiper-wrapper {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: fit-content;
   z-index: 1;
   display: flex;
   transition-property: transform;
@@ -74,6 +75,9 @@
   position: relative;
   transition-property: transform;
   display: block;
+}
+.swiper-slide--btn {
+  width: fit-content;
 }
 .swiper-slide-invisible-blank {
   visibility: hidden;

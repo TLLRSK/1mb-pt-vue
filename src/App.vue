@@ -1,9 +1,7 @@
 <template>
   <section class="app-chatbot">
     <nav-bar/>
-
-    <main class="main">
-      <chat-container 
+    <chat-container 
       :messagesLog="messagesLog"
       />
 
@@ -13,23 +11,23 @@
       <message-input
         @send-message="sendMessage"
       />
-    </main>
+    <chatbot-footer></chatbot-footer>
   </section>
 </template>
 
 <script>
+import NavBar from './components/navbar/NavBar.vue';
 import ChatContainer from './components/chatContainer/ChatContainer.vue';
 import ChatQuestionsCarousel from './components/questionsCarousel/QuestionsCarousel.vue';
 import MessageInput from './components/messageInput/MessageInput.vue';
-import MessageImageCard from './components/messages/MessageImageCard.vue';
-import NavBar from './components/navbar/NavBar.vue';
-
+import ChatbotFooter from './components/footer/ChatbotFooter.vue';
 export default {
   components: {
     NavBar,
     ChatContainer,
     ChatQuestionsCarousel,
     MessageInput,
+    ChatbotFooter
   },
   data() {
     return {

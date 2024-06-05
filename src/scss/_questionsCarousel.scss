@@ -1,0 +1,34 @@
+.swiper-container {
+    padding: $p--s;
+    position: relative;
+    .swiper-slide {
+        background-color: $gray;
+        width: fit-content;
+        padding: $p--s $p--m;
+        border-radius: $rounded--m;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 3.2rem;
+        height: 3.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $black;
+        color: $white;
+        border-radius: $round;
+        margin: 0;
+        &::after {
+            font-size: $font--l;
+        }
+    }
+    .swiper-button-next {
+        right: 0;
+    }
+    .swiper-button-prev {
+        left: 0;
+    }
+    .swiper-button-disabled {
+        display: none;
+    }
+}
+

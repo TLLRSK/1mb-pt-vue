@@ -6,9 +6,18 @@
         top: 100%;
         right: 0;
         background-color: white;
+
+        .list-item {
+            padding: $p--m;
+            border-bottom: 1px solid $gray;
+        }
     }
     .list.open {
         display: flex;
         flex-direction: column;
+    }
+    
+    .btn--dropdown-menu {
+        color: $white;
     }
 }

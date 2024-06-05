@@ -1,7 +1,7 @@
 <template>
-    <form>
-        <input type="text" placeholder="Escribe tu pregunta" v-model="messageContent">
-        <button @click.prevent="sendMessage">Send</button>
+    <form class="form">
+        <input class="input" type="text" placeholder="Escribe tu pregunta" v-model="messageContent">
+        <button class="btn--send-message" @click.prevent="sendMessage">Send</button>
     </form>
 </template>
 

@@ -4,8 +4,8 @@
             <span class="btn-bullet">open</span>
         </button>
         <ul :class="['list', {'open': isMenuOpen}]">
-            <li class="list-item-" v-for="option in menuOptions" :key="option">
-                {{ option.text }}
+            <li class="list-item" v-for="option in menuOptions" :key="option">
+                <a href="">{{ option.text }}</a>
             </li>
         </ul>
     </div>
@@ -16,9 +16,9 @@
         data() {
             return {
                 menuOptions: [
-                    { text: "forget user data"},
-                    { text: "change language"},
-                    { text: "access the privacy policy."},
+                    { text: "Forget user data"},
+                    { text: "Change language"},
+                    { text: "Access the privacy policy"},
                 ],
                 isMenuOpen: false,
             }
