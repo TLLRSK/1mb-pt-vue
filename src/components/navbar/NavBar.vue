@@ -1,11 +1,13 @@
 <template>
     <nav :class="['nav-bar', {open: isChatWindowOpen, closed: !isChatWindowOpen}]">
-      <button @click="toggleChatWindow">-</button>
-      <div class="chatbot-profile">
+        <button class="btn--toggle-chat-window" @click="toggleChatWindow">
+            <span class="btn-bar"></span>
+        </button>
+        <div class="chatbot-profile">
         <img class="chatbot-img" :src="chatbot.imgUrl" :alt="chatbot.name">
         <p class="chatbot-name">{{ chatbot.name }}</p>
-      </div>
-      <nav-dropdown-menu/>
+        </div>
+        <nav-dropdown-menu/>
     </nav>
 </template>
 

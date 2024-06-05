@@ -2,7 +2,7 @@
   <section class="app-chatbot">
     <nav-bar/>
 
-    <main>
+    <main class="main">
       <chat-container 
       :messagesLog="messagesLog"
       />

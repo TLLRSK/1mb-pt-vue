@@ -46,8 +46,12 @@ Requisites:
 ** METHODS **
 
 - Send messages 🔨
-    - user 🔨
-    - bot 🔨
+    - User messages: 🔨
+        - Writing
+        - By clicking question button
+    - Bot messages: 🔨
+        - Simple response
+        - Image card response
 - Minimize Chatbot Container 🔨
 - Toggle Dropdown 🔨
 

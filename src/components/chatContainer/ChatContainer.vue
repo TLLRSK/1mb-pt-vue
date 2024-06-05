@@ -1,13 +1,14 @@
 <template>
-    <ul class="chat-container">
+    <ul class="chat-container" ref="chatContainer">
+        <message-image-card></message-image-card>
       <message
         v-for="(message, index) in messages"
         :key="index"
         :message-author="message.author"
         :message-content="message.content"
       />
-      <message-image-card></message-image-card>
-</ul>
+      
+    </ul>
 </template>
 
 <script>
@@ -31,6 +32,17 @@ export default {
             messages: this.messagesLog,
             };
         },
+        updated() {
+            this.scrollToBottom();
+        },
+        methods: {
+            scrollToBottom() {
+                const chatContainer = this.$refs.chatContainer;
+                if (chatContainer) {
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                }
+            },
+        }
     };
 </script>
   

@@ -1,15 +1,41 @@
 [class*="message--"] {
-    padding: 10px;
-    border-radius: 10px;
+  border-radius: $rounded--m;
+  max-width: 75%;
+  background-color: $white;
+  padding: $p--m;
 }
 
-.message--user {
+.message {
+  &--user {
     text-align: right;
-    background-color: #e1ffc7;
-    
+    background-color: $main;
+    color: $white;
+    margin-left: auto;
+    border-top-right-radius: 0;
   }
   
-  .message--chatbot {
+  &--chatbot {
     text-align: left;
-    background-color: #f1f1f1;
+    border-top-left-radius: 0;
   }
+
+  &--image-card {
+    padding: 0;
+    overflow: hidden;
+    .swiper-slide, 
+    .swiper-slide-active,
+    .swiper-slide-prev, 
+    .swiper-slide-next {
+      display: flex;
+      flex-direction: column;
+      padding: $p--m;
+      gap: $gap--s;
+    }
+    .img {
+      width: 100%;
+    }
+    .link {
+      width: 100%;
+    }
+  }
+}

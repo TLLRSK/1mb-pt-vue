@@ -1,7 +1,10 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
+import { register } from 'swiper/element/bundle';
+import './scss/style.scss';
 
+const app = createApp(App)
 
+register();
 
-createApp(App).mount('#app')
+app.mount('#app')

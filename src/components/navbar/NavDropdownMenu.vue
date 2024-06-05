@@ -1,7 +1,7 @@
 <template>
     <div class="dropdown-menu">
         <button class="btn--dropdown-menu" @click="toggleDropdownMenu">
-        {{ isMenuOpen ? 'CLOSE' : 'OPEN' }}
+            <span class="btn-bullet">open</span>
         </button>
         <ul :class="['list', {'open': isMenuOpen}]">
             <li class="list-item-" v-for="option in menuOptions" :key="option">
@@ -12,7 +12,6 @@
 </template>
 
 <script>
-    import MessageImageCard from '../messages/MessageImageCard.vue'
     export default {
         data() {
             return {

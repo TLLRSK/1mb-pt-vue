@@ -11,24 +11,17 @@
   </template>
   
   <script>
-  import { register } from 'swiper/element/bundle';
-  import { ref } from 'vue';
-  
-  // Registrar los elementos personalizados de Swiper
-  register();
   
   export default {
-    setup() {
-      const questions =[
-        "Qué es un chatbot",
-        "Para qué sirve",
-        "Qué es 1milionbot",
-        "Qué es una IA"
-      ];
-  
+    data() {
       return {
-        questions
-      };
-    }
+        questions: [
+          "Qué es un chatbot",
+          "Para qué sirve",
+          "Qué es 1milionbot",
+          "Qué es una IA"
+        ],
+      }
+    },
   };
   </script>

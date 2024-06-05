@@ -1,1 +1,32 @@
 // Colors
+$main: oklch(69.71% 0.227 28.59);
+$white: oklch(100% 0 0);
+$gray: oklch(95% 0 0);
+$black: oklch(0% 0 0);
+
+// Unit
+$unit--s: 1.2rem;
+$unit--m: 1.6rem;
+$unit--l: 2rem;
+// Font size
+$font--s: $unit--s;
+$font--m: $unit--m;
+$font--l: $unit--l;
+
+// Paddings
+$p--s: $unit--s;
+$p--m: $unit--m;
+$p--l: $unit--l;
+// MArgins
+$margin--s: $unit--s;
+$margin--m: $unit--m;
+$margin--l: $unit--l;
+
+// Gap
+$gap--s: $unit--s;
+$gap--m: $unit--m;
+$gap--l: $unit--l;
+
+//Border radius
+$rounded--s: $unit--s;
+$rounded--m: $unit--m;
