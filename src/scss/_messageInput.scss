@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     position: relative;
-    min-height: 3.2rem;
+    min-height: 5rem;
     border-top: 1px solid $gray;
     border-bottom: 1px solid $gray;
     .input {
@@ -15,10 +15,12 @@
     .btn--send-message {
         position: absolute;
         right: 0;
-        width: 6.4rem;
-        height: 3.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $p--m;
         background-color: $main;
         color: $white;
-        border-radius: $rounded--m;
+        border-top-left-radius: $rounded--l;
     }
 }

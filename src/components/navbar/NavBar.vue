@@ -1,7 +1,7 @@
 <template>
     <nav class="nav-bar">
         <button class="btn--toggle-chat-window" @click="toggleChatWindow">
-            <span class="btn-bar"></span>
+            <icon-minimize/>
         </button>
         <div class="chatbot-profile">
         <img class="chatbot-img" :src="chatbot.imgUrl" :alt="chatbot.name">
@@ -12,10 +12,12 @@
 </template>
 
 <script>
-  import NavDropdownMenu from './NavDropdownMenu.vue'
-  export default {
+    import IconMinimize from '../icons/IconMinimize.vue';
+    import NavDropdownMenu from './NavDropdownMenu.vue';
+    export default {
       components: {
-          NavDropdownMenu
+          NavDropdownMenu,
+          IconMinimize,
       },
       data() {
           return {

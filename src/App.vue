@@ -8,7 +8,7 @@
           <img src="../public/images/chabot-pfp.gif" alt="">
         </button>
         <button class="btn--close-chatbot" @click="closeChatbot">
-          X
+          <icon-close/>
         </button>
       </div>
 
@@ -36,6 +36,7 @@ import MessagesContainer from './components/messagesContainer/MessagesContainer.
 import ChatQuestionsCarousel from './components/questionsCarousel/QuestionsCarousel.vue';
 import MessageInput from './components/messageInput/MessageInput.vue';
 import ChatbotFooter from './components/footer/ChatbotFooter.vue';
+import IconClose from './components/icons/IconClose.vue';
 
 export default {
   components: {
@@ -44,6 +45,7 @@ export default {
     ChatQuestionsCarousel,
     MessageInput,
     ChatbotFooter,
+    IconClose,
   },
   data() {
     return {

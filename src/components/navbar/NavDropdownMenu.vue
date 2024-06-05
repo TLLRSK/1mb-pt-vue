@@ -1,7 +1,7 @@
 <template>
     <div class="dropdown-menu">
         <button class="btn--dropdown-menu" @click="toggleDropdownMenu">
-            <span class="btn-bullet">open</span>
+            <icon-menu/>
         </button>
         <ul :class="['list', {'open': isMenuOpen}]">
             <li class="list-item" v-for="option in menuOptions" :key="option">
@@ -12,7 +12,11 @@
 </template>
 
 <script>
+    import IconMenu from '../icons/IconMenu.vue';
     export default {
+        components: {
+            IconMenu,
+        },
         data() {
             return {
                 menuOptions: [
