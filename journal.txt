@@ -40,7 +40,7 @@ Requisites:
         - image 🔨
         - text 🔨
         - link button 🔨
-        - swiper carousel
+        - swiper carousel ❌
 - footer
 
 ** METHODS **

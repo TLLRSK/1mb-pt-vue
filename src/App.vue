@@ -1,17 +1,17 @@
 <template>
   <section class="app-chatbot">
     <nav-bar/>
+
     <chat-container 
       :messagesLog="messagesLog"
-      />
+    />
 
-      <chat-questions-carousel
-      />
+    <chat-questions-carousel />
 
-      <message-input
-        @send-message="sendMessage"
-      />
+    <message-input @send-message="sendMessage" />
+
     <chatbot-footer></chatbot-footer>
+
   </section>
 </template>
 
@@ -21,47 +21,83 @@ import ChatContainer from './components/chatContainer/ChatContainer.vue';
 import ChatQuestionsCarousel from './components/questionsCarousel/QuestionsCarousel.vue';
 import MessageInput from './components/messageInput/MessageInput.vue';
 import ChatbotFooter from './components/footer/ChatbotFooter.vue';
+
 export default {
   components: {
     NavBar,
     ChatContainer,
     ChatQuestionsCarousel,
     MessageInput,
-    ChatbotFooter
+    ChatbotFooter,
   },
   data() {
     return {
       messagesLog: [
         {
-            author: "user",
-            content: "lorem ipsum lorem.",
+          author: "chatbot",
+          type: "default",
+          content: "¡Hola! Soy Millie de 1MillionBot 🙋🏽‍♀️"
         },
         {
-            author: "chatbot",
-            content: "lorem ipsum lorem ipsum.",
+          author: "chatbot",
+          type: "default",
+          content: "Ya seas particular, empresa o institución, cuéntame tus intereses o necesidades. Así, podré ayudarte mejor. 🌐"
         },
       ],
-      chatbotResponse: {
-        author: "chatbot",
-        content: "random response from chatbot"
-      }
+      chatbotResponses: [
+        {
+          type: "default",
+          content: "random response from chatbot",
+        },
+        {
+          type: "imageCard",
+          content: {
+            imgUrl: "public/images/article-image.webp",
+            title: "article title",
+            text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
+            articleUrl: "https://placehold.jp/150x150.png",
+          },
+        },
+      ],
     };
   },
   methods: {
     sendMessage(message) {
-        this.messagesLog.push(message);
-        console.log(this.messagesLog)
-        setTimeout(() => {
-          this.sendResponse();
-        }, 1000)
+      this.messagesLog.push({ author: 'user', content: message.content, type: 'default' });
+      setTimeout(() => {
+        this.sendResponse();
+      }, 500);
     },
     sendResponse() {
-      this.messagesLog.push(this.chatbotResponse);
-    }
-  }
+      const randomIndex = Math.floor(Math.random() * this.chatbotResponses.length);
+      const selectedResponse = this.chatbotResponses[randomIndex];
+
+      let formattedResponse = {
+        author: "chatbot",
+        type: selectedResponse.type,
+        content: null,
+      };
+
+      switch(selectedResponse.type) {
+
+        case "default":
+          formattedResponse.content = selectedResponse.content;
+          break;
+
+        case "imageCard":
+          formattedResponse.content = {
+            imgUrl: selectedResponse.content.imgUrl,
+            title: selectedResponse.content.title,
+            text: selectedResponse.content.text,
+            articleUrl: selectedResponse.content.articleUrl,
+          };
+          break;
+
+        default:
+          break;
+      }
+      this.messagesLog.push(formattedResponse);
+    },
+  },
 };
 </script>
-
-<style>
-  @import './scss/style.scss';
-</style>
