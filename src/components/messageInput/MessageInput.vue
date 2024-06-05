@@ -24,6 +24,7 @@ import IconSend from '../icons/IconSend.vue';
             sendMessage()  {
                 const message = { content: this.messageContent, author: this.author}
                 this.$emit('send-message', message);
+                this.messageContent = "";
             }
         }
     }
