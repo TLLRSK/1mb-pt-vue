@@ -23,3 +23,20 @@
         left: auto;
     }
 }
+.chatbot-container--hidden {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: fixed;
+    bottom: $margin--m;
+    right: $margin--m;
+    -webkit-box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
+}
+.chatbot-container--visible {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

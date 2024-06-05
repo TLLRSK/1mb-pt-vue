@@ -1,17 +1,27 @@
 <template>
-  <section class="app-chatbot">
-    <nav-bar/>
+  <section 
+    class="app-chatbot">
 
-    <chat-container 
-      :messagesLog="messagesLog"
-    />
+      <div class="chatbot-container--hidden" v-if="!isChatbotVisible">
+        <button class="btn--show-chatbot" @click="toggleChatbotWindow">
+          <img src="../public/images/chabot-pfp.gif" alt="">
+        </button>
+        <button class=""></button>
+      </div>
 
-    <chat-questions-carousel />
+      <div class="chatbot-container--visible" v-else>
+        <nav-bar @toggle-chatbot="toggleChatbotWindow"/>
 
-    <message-input @send-message="sendMessage" />
+        <chat-container 
+          :messagesLog="messagesLog"
+        />
 
-    <chatbot-footer></chatbot-footer>
+        <chat-questions-carousel />
 
+        <message-input @send-message="sendMessage" />
+
+        <chatbot-footer></chatbot-footer>
+      </div>
   </section>
 </template>
 
@@ -32,6 +42,7 @@ export default {
   },
   data() {
     return {
+      isChatbotVisible: false,
       messagesLog: [
         {
           author: "chatbot",
@@ -62,6 +73,9 @@ export default {
     };
   },
   methods: {
+    toggleChatbotWindow() {
+      this.isChatbotVisible = !this.isChatbotVisible;
+    },
     sendMessage(message) {
       this.messagesLog.push({ author: 'user', content: message.content, type: 'default' });
       setTimeout(() => {

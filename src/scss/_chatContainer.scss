@@ -1,7 +1,7 @@
 .chat-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1;
     padding: $p--l;
     gap: 1.6rem;
     background-color: $gray;

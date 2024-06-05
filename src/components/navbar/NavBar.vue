@@ -1,5 +1,5 @@
 <template>
-    <nav :class="['nav-bar', {open: isChatWindowOpen, closed: !isChatWindowOpen}]">
+    <nav class="nav-bar">
         <button class="btn--toggle-chat-window" @click="toggleChatWindow">
             <span class="btn-bar"></span>
         </button>
@@ -29,7 +29,7 @@
       },
       methods: {
           toggleChatWindow() {
-              this.isChatWindowOpen = !this.isChatWindowOpen;
+              this.$emit("toggle-chatbot");
           },
       }
   }
