@@ -9,11 +9,7 @@
     left: 0;
     overflow: hidden;
 
-    .main {
-        overflow: hidden;
-    }
-   
-    &:has(.nav-bar[class*="closed"]) {
+    &.closed {
         display: none;
     }
 
@@ -24,16 +20,27 @@
     }
 }
 .chatbot-container--hidden {
-    width: 12rem;
-    height: 12rem;
-    border-radius: 50%;
-    overflow: hidden;
+    width: 8rem;
+    height: 8rem;
+    
     position: fixed;
     bottom: $margin--m;
     right: $margin--m;
-    -webkit-box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
+    
+    .btn--show-chatbot {
+        overflow: hidden;
+        border-radius: 50%;
+        -webkit-box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
+
+    }
+
+    .btn--close-chatbot {
+        position: absolute;
+        top: -$margin--m;
+        right: 0;
+    }
 }
 .chatbot-container--visible {
     height: 100%;

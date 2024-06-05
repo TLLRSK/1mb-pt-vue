@@ -1,12 +1,16 @@
 <template>
   <section 
-    class="app-chatbot">
+    :class="['app-chatbot', {'closed': !isChatbotOpen}]"
+    v-if="isChatbotOpen"
+  >
 
       <div class="chatbot-container--hidden" v-if="!isChatbotVisible">
         <button class="btn--show-chatbot" @click="toggleChatbotWindow">
           <img src="../public/images/chabot-pfp.gif" alt="">
         </button>
-        <button class=""></button>
+        <button class="btn--close-chatbot" @click="closeChatbot">
+          X
+        </button>
       </div>
 
       <div class="chatbot-container--visible" v-else>
@@ -26,6 +30,7 @@
 </template>
 
 <script>
+
 import NavBar from './components/navbar/NavBar.vue';
 import ChatContainer from './components/chatContainer/ChatContainer.vue';
 import ChatQuestionsCarousel from './components/questionsCarousel/QuestionsCarousel.vue';
@@ -43,6 +48,7 @@ export default {
   data() {
     return {
       isChatbotVisible: false,
+      isChatbotOpen: true,
       messagesLog: [
         {
           author: "chatbot",
@@ -75,6 +81,9 @@ export default {
   methods: {
     toggleChatbotWindow() {
       this.isChatbotVisible = !this.isChatbotVisible;
+    },
+    closeChatbot() {
+      this.isChatbotOpen = false;
     },
     sendMessage(message) {
       this.messagesLog.push({ author: 'user', content: message.content, type: 'default' });
