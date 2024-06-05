@@ -20,8 +20,8 @@
       data() {
           return {
               chatbot: {
-              imgUrl: "https://placehold.jp/16x16.png",
-              name: "Bill"
+              imgUrl: "../../public/images/chabot-pfp.gif",
+              name: "Millie"
               },
               isChatWindowOpen: true,
               isDropdownMenuOpen: false,

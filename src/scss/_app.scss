@@ -1,3 +1,4 @@
+@import './mixins';
 .app-chatbot {
     height: 100%;
     display: flex;
@@ -6,6 +7,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    overflow: hidden;
 
     .main {
         overflow: hidden;
@@ -13,5 +15,11 @@
    
     &:has(.nav-bar[class*="closed"]) {
         display: none;
+    }
+
+    @include mq-480 {
+        height: 66%;
+        max-width: 48rem;
+        left: auto;
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="swiper-container">
+    <div class="swiper questions-carousel">
       <div class="swiper-wrapper">
         <button class="swiper-slide question" v-for="(question, index) in questions" :key="index">
           {{ question }}
@@ -27,9 +27,9 @@
       }
     },
     mounted() {
-      this.swiper = new Swiper('.swiper-container', {
+      this.swiper = new Swiper('.swiper', {
         slidesPerView: 'auto',
-        spaceBetween: '24',
+        spaceBetween: '16',
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',

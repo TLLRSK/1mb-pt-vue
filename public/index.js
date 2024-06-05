@@ -1,6 +1,6 @@
 const chatbotProfile = {
-    name: "Bill",
-    imgUrl: "https://placehold.jp/16x16.png",
+    name: "Millie",
+    imgUrl: "public\images\chabot-pfp.gif",
 }
 
 const dataNews = [

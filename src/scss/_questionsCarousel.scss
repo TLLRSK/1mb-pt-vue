@@ -1,22 +1,23 @@
-.swiper-container {
+.questions-carousel {
     padding: $p--s;
     position: relative;
-    .swiper-slide {
-        background-color: $gray;
+    height: fit-content;
+    .question {
         width: fit-content;
-        padding: $p--s $p--m;
+        padding: $p--s*.25 $p--s;
+        border: 1px solid $black;
         border-radius: $rounded--m;
     }
     .swiper-button-next,
     .swiper-button-prev {
-        width: 3.2rem;
-        height: 3.2rem;
+        width: 5.6rem;
+        height: 5.6rem;
         top: 50%;
         transform: translateY(-50%);
-        background-color: $black;
-        color: $white;
-        border-radius: $round;
+        background-color: $white;
+        color: $black;
         margin: 0;
+        border: 1px solid $gray;
         &::after {
             font-size: $font--l;
         }
