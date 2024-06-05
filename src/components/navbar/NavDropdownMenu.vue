@@ -5,7 +5,7 @@
         </button>
         <ul :class="['list', {'open': isMenuOpen}]">
             <li class="list-item" v-for="option in menuOptions" :key="option">
-                <a href="">{{ option.text }}</a>
+                <button @click="toggleDropdownMenu">{{ option.text }}</button>
             </li>
         </ul>
     </div>

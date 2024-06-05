@@ -69,6 +69,10 @@ export default {
           content: "random response from chatbot",
         },
         {
+          type: "default",
+          content: "another random response",
+        },
+        {
           type: "imageCard",
           content: {
             imgUrl: "public/images/article-image.webp",

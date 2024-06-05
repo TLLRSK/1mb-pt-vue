@@ -19,52 +19,63 @@ Requisites:
 
 
 ** COMPONENTS **
+
 - nav
-    - buttonMinimize 🔨
-    - chatbotName + chatbotImage 🔨
+    - buttonToggleWindow ✔
+    - chatbotName + chatbotImage ✔
     - dropdownMenu 🔨
         - dropdownItem 🔨
 
 - chatContainer
-    - chattButtonCarousel 🔨
-        - swiper carousel 🔨
-    - buttonChat 🔨
-    - buttonChatArrow 🔨
+    - chatButtonOptionCarousel ✔
+        - swiper carousel ✔
+    - buttonChatOption ✔
+    - buttonChatOptionArrow ✔
 
     - messageForm:
-        - input text 🔨
-        - send button 🔨
+        - input text ✔
+        - send button ✔
+            - disabled & enabled 🔨
 
     - message (user & bot) 🔨
+
+    - message chatbot is writing
+
     - messageImageCard: 🔨
         - image 🔨
         - text 🔨
         - link button 🔨
         - swiper carousel ❌
-- footer
+
+- footer ✔
 
 ** METHODS **
 
 - Send messages 🔨
     - User messages: 🔨
-        - Writing
+        - Writing 🔨
         - By clicking question button
+
     - Bot messages: 🔨
-        - Simple response
-        - Image card response
-- Minimize Chatbot Container 🔨
-- Toggle Dropdown 🔨
+        - Simple response 🔨
+        - Image card response 🔨
+
+- Toggle Chatbot Window ✔
+- Close Chatbot ✔
+
+- Toggle Dropdown ✔
 
 
 * Send Messages *
 Sending message data:
     input > app > chat
 
-* Minimize Chatbot Container * ✔
-1. Toggling display class by clicking minimize button. ✔
-2. On "close" > hide main element. ✔
+* Toggle Chatbot Window * ✔
+1. Toggling display class by clicking toggler button. ✔
 
 * Toggle Dropdown * ✔
 1. Toggling display class by clicking toggle menu button. ✔
 2. Change button appearance ("open" and "close")
 3. Change list style to absolute. ✔
+
+* Close Chatbot *
