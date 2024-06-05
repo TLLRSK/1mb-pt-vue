@@ -61,21 +61,52 @@ Requisites:
         - Image card response 🔨
 
 - Toggle Chatbot Window ✔
+
 - Close Chatbot ✔
 
 - Toggle Dropdown ✔
 
+- Fullscreen Window 
+
+
 
 * Send Messages *
-Sending message data:
+
+Sending message data: ✔
     input > app > chat
+    
+- Try it with Vuex
+
 
 * Toggle Chatbot Window * ✔
+
 1. Toggling display class by clicking toggler button. ✔
 
-* Toggle Dropdown * ✔
+
+* Toggle Dropdown Menu * ✔
+
 1. Toggling display class by clicking toggle menu button. ✔
 2. Change button appearance ("open" and "close")
 3. Change list style to absolute. ✔
+4. Toggle menu on clicking menu item. ✔
+5. Close menu on mouse leaving the component.
+
 
 * Close Chatbot *
+
+1. Rendering chatbot if is not closed. ✔
+
+
+* Full screen window *
+
+1. MOBILE - fullscreen by default. ✔
+2. DESKTOP
+    - Displaying fullscreen button
+    - Changing width and height on clicking fullscreen button (navbar).
+
+
+* Show chatbot is writing message *
+
+1. Set a timeout
+2. Render a chatbot message with "writing..."
+3. After the timeout, change the content with new message.
