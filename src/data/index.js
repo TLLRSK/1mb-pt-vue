@@ -4,9 +4,9 @@ export const botProfileData = {
 };
 
 export const dropdownMenuOptionsData = [
-    { text: "Forget user data" },
-    { text: "Change language" },
-    { text: "Access the privacy policy" }
+    {text: "Forget user data"},
+    {text: "Change language"},
+    {text: "Access the privacy policy"}
 ];
 export const optionsList = [
     {text: "Qué es un chatbot"},

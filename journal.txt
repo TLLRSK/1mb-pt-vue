@@ -1,6 +1,6 @@
 Brieffing:
 
-Create a chat window
+Create a chatbot window
 
 
 Framework: Vue 3.0;

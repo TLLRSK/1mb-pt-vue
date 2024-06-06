@@ -14,7 +14,7 @@
             ButtonSendMessage,
         },
         computed: {
-            ...mapState(['currentMessage'],)
+            ...mapState(['currentMessage']),
         },
     }
 </script>

@@ -23,9 +23,11 @@ export const store = createStore({
       ],
       currentMessage: {
         content: '',
+        author: 'user',
+        type: 'default',
       },
       botResponses: botResponsesData,
-      optionsList: optionsList,
+      optionsCarousel: optionsList,
     };
   },
   mutations: {
@@ -40,7 +42,7 @@ export const store = createStore({
     },
     sendMessage(state) {
       const message = state.currentMessage;
-      state.messagesLog.push({ author: 'user', content: message.content, type: 'default' });
+      state.messagesLog.push({ author: message.author, content: message.content, type: message.type });
       state.currentMessage.content = '';
     },
     sendResponse(state) {

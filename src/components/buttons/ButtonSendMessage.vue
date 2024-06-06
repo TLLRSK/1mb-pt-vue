@@ -1,15 +1,21 @@
 <template>
-    <button class="btn--send-message" @click.prevent="sendMessage">
+    <button class="btn--send-message" @click.prevent="sendMessage" :disabled="isDisabled">
         <icon-send/>
     </button>
 </template>
 <script>
-    import { mapActions } from 'vuex';
+    import { mapState, mapActions } from 'vuex';
     import IconSend from '../icons/IconSend.vue';
 
     export default {
         components: {
             IconSend,
+        },
+        computed: {
+            ...mapState(['currentMessage']),
+            isDisabled() {
+                return this.currentMessage.content.length <= 0;
+            }
         },
         methods: {
             ...mapActions(['sendMessage']),
