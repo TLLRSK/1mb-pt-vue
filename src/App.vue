@@ -9,45 +9,41 @@
       </div>
 
       <div class="chatbot-container--visible" v-else>
-        <nav-bar/>
-
-        <messages-container />
-
-        <chat-questions-carousel />
-
-        <message-input/>
-
-        <chatbot-footer></chatbot-footer>
-
+        <Top-bar/>
+        <chat/>
+        <chat-options-carousel/>
+        <chat-input/>
+        <chat-footer></chat-footer>
       </div>
+
   </section>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
-import NavBar from './components/navbar/NavBar.vue';
-import MessagesContainer from './components/messagesContainer/MessagesContainer.vue';
-import ChatQuestionsCarousel from './components/questionsCarousel/QuestionsCarousel.vue';
-import MessageInput from './components/messageInput/MessageInput.vue';
-import ChatbotFooter from './components/footer/ChatbotFooter.vue';
-import ButtonCloseChat from './components/buttons/ButtonCloseChat.vue';
-import ButtonShowChat from './components/buttons/ButtonShowChat.vue';
+  import { mapState, mapMutations } from 'vuex';
+  import TopBar from './components/topBar/TopBar.vue';
+  import Chat from './components/chat/Chat.vue';
+  import ChatOptionsCarousel from './components/chatOptionsCarousel/ChatOptionsCarousel.vue';
+  import ChatInput from './components/chatInput/ChatInput.vue';
+  import ChatFooter from './components/chatFooter/ChatFooter.vue';
+  import ButtonCloseChat from './components/buttons/ButtonCloseChat.vue';
+  import ButtonShowChat from './components/buttons/ButtonShowChat.vue';
 
-export default {
-  components: {
-    NavBar,
-    MessagesContainer,
-    ChatQuestionsCarousel,
-    MessageInput,
-    ChatbotFooter,
-    ButtonCloseChat,
-    ButtonShowChat,
-  },
-  computed: {
-    ...mapState(['isChatbotOpen', 'isChatWindowOpen']),
-  },
-  methods: {
-    ...mapMutations(['toggleChatbotWindow', 'closeChatbot']),
-  }
-};
+  export default {
+    components: {
+      ButtonCloseChat,
+      ButtonShowChat,
+      TopBar,
+      Chat,
+      ChatInput,
+      ChatOptionsCarousel,
+      ChatFooter,
+    },
+    computed: {
+      ...mapState(['isChatbotOpen', 'isChatWindowOpen']),
+    },
+    methods: {
+      ...mapMutations(['toggleChatbotWindow', 'closeChatbot']),
+    }
+  };
 </script>

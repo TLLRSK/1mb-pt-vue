@@ -1,5 +1,5 @@
 <template>
-    <ul class="messages-container" ref="messagesContainer">
+    <ul class="chat" ref="messagesContainer">
       <template v-for="(message, index) in messagesLog" :key="index">
         <message-default
           v-if="message.type === 'default'"

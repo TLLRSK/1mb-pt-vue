@@ -1,21 +1,21 @@
 <template>
-    <nav class="nav-bar">
+    <header class="top-bar">
         <button-minimize-chat/>
         <div class="chatbot-profile">
             <img class="chatbot-img" :src="botProfile.imgUrl" :alt="botProfile.name">
             <p class="chatbot-name">{{ botProfile.name }}</p>
         </div>
-        <nav-dropdown-menu/>
-    </nav>
+        <dropdown-menu/>
+    </header>
 </template>
 
 <script>
     import { mapState, mapMutations } from 'vuex';
     import ButtonMinimizeChat from '../buttons/ButtonMinimizeChat.vue';
-    import NavDropdownMenu from './NavDropdownMenu.vue';
+    import DropdownMenu from '../dropdownMenu/DropdownMenu.vue';
     export default {
         components: {
-            NavDropdownMenu,
+            DropdownMenu,
             ButtonMinimizeChat,
         },
         computed: {

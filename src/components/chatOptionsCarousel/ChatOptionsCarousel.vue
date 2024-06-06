@@ -1,5 +1,5 @@
 <template>
-    <div class="swiper questions-carousel">
+    <div class="swiper chat-questions-carousel">
       <div class="swiper-wrapper">
         <button class="swiper-slide question" v-for="(question, index) in optionsCarousel" :key="index">
           {{ question.text }}
