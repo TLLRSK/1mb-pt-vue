@@ -41,15 +41,17 @@ export {default as IconMenu} from '../components/icons/IconMenu.vue';
 export {default as IconMinimize} from '../components/icons/IconMinimize.vue';
 export {default as IconSend} from '../components/icons/IconSend.vue';
 // Buttons
+export {default as ButtonCloseCto} from '../components/buttons/ButtonCloseCto.vue';
 export {default as ButtonCloseChat} from '../components/buttons/ButtonCloseChat.vue';
 export {default as ButtonMinimizeChat} from '../components/buttons/ButtonMinimizeChat.vue';
 export {default as ButtonToggleDropdown} from '../components/buttons/ButtonToggleDropdown.vue';
-export {default as ButtonSendMessage} from '../components/buttons/ButtonCloseChat.vue';
+export {default as ButtonSendMessage} from '../components/buttons/ButtonSendMessage.vue';
 export {default as ButtonShowChat} from '../components/buttons/ButtonShowChat.vue';
 // Messages
 export {default as MessageDefault} from '../components/messages/MessageDefault.vue';
 export {default as MessageImageCard} from '../components/messages/MessageImageCard.vue';
 // Chat window
+export {default as Cto} from '../components/cto/Cto.vue';
 export {default as DropdownMenu} from '../components/dropdownMenu/DropdownMenu.vue';
 export {default as TopBar} from '../components/topBar/TopBar.vue';
 export {default as Chat} from '../components/chat/Chat.vue';

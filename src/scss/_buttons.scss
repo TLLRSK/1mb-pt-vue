@@ -40,4 +40,15 @@
         top: -$margin--m;
         right: 0;
     }
+    &--close-cto {
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        &:hover { 
+            background-color: $black;
+            path {
+                fill: $white;
+            }
+        }
+    }
 }

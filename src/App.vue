@@ -4,6 +4,7 @@
     v-if="isChatbotOpen">
 
       <div :class="['chatbot-container--' + (isChatWindowOpen ? 'hidden' : 'minimized')]">
+        <cto/>
         <button-show-chat/>
         <button-close-chat/>
       </div>
@@ -21,12 +22,13 @@
 
 <script>
   import { mapState, mapMutations } from 'vuex';
-  import { ButtonCloseChat, ButtonShowChat, Chat, ChatFooter, ChatInput, ChatOptionsCarousel, TopBar } from './data';
+  import { ButtonCloseChat, ButtonShowChat, Chat, ChatFooter, ChatInput, ChatOptionsCarousel, Cto, TopBar } from './data';
 
   export default {
     components: {
       ButtonCloseChat,
       ButtonShowChat,
+      Cto,
       TopBar,
       Chat,
       ChatInput,

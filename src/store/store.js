@@ -4,8 +4,9 @@ import { botProfileData, dropdownMenuOptionsData, optionsList, botResponsesData 
 export const store = createStore({
   state() {
     return {
-      isChatWindowOpen: false,
       isChatbotOpen: true,
+      isCtoVisible: true,
+      isChatWindowOpen: false,
       isDropdownMenuOpen: false,
       botProfile: botProfileData,
       dropdownMenuOptions: dropdownMenuOptionsData,
@@ -33,6 +34,9 @@ export const store = createStore({
   mutations: {
     closeChatbot(state) {
       state.isChatbotOpen = false;
+    },
+    closeCto(state) {
+      state.isCtoVisible = false;
     },
     toggleChatbotWindow(state) {
       state.isChatWindowOpen = !state.isChatWindowOpen;

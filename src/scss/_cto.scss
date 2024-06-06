@@ -1,0 +1,11 @@
+.cto {
+    display: flex;
+    gap: $gap--m;
+    position: absolute;
+    right: calc(100% + $margin--m);
+    width: max-content;
+    background-color: $gray;
+    padding: $p--m;
+    border-radius: $rounded--m;
+    border-bottom-right-radius: 0;
+}
