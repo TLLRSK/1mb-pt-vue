@@ -20,6 +20,9 @@
     }
 }
 .chatbot-container--hidden {
+    display: none;
+}
+.chatbot-container--minimized {
     width: 8rem;
     height: 8rem;
     
@@ -27,7 +30,7 @@
     bottom: $margin--m;
     right: $margin--m;
 }
-.chatbot-container--visible {
+.chatbot--default {
     height: 100%;
     display: flex;
     flex-direction: column;

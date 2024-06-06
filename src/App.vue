@@ -3,12 +3,12 @@
     :class="['app-chatbot', {'closed': !isChatbotOpen}]"
     v-if="isChatbotOpen">
 
-      <div class="chatbot-container--hidden" v-if="!isChatWindowOpen">
+      <div :class="['chatbot-container--' + (isChatWindowOpen ? 'hidden' : 'minimized')]">
         <button-show-chat/>
         <button-close-chat/>
       </div>
 
-      <div class="chatbot-container--visible" v-else>
+      <div :class="['chatbot-container--' + (isChatWindowOpen ? 'default' : 'hidden')]">
         <Top-bar/>
         <chat/>
         <chat-options-carousel/>
