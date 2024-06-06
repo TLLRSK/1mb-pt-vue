@@ -51,4 +51,11 @@
             }
         }
     }
+    &--maximize {
+        cursor: pointer;
+        .maximize-toggler {
+            appearance: none;
+            position: absolute;
+        }
+    }
 }

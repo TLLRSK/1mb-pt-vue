@@ -40,6 +40,8 @@ export {default as IconClose} from '../components/icons/IconClose.vue';
 export {default as IconMenu} from '../components/icons/IconMenu.vue';
 export {default as IconMinimize} from '../components/icons/IconMinimize.vue';
 export {default as IconSend} from '../components/icons/IconSend.vue';
+export {default as IconMaximize} from '../components/icons/IconMaximize.vue';
+
 // Buttons
 export {default as ButtonCloseCto} from '../components/buttons/ButtonCloseCto.vue';
 export {default as ButtonCloseChat} from '../components/buttons/ButtonCloseChat.vue';
@@ -47,6 +49,7 @@ export {default as ButtonMinimizeChat} from '../components/buttons/ButtonMinimiz
 export {default as ButtonToggleDropdown} from '../components/buttons/ButtonToggleDropdown.vue';
 export {default as ButtonSendMessage} from '../components/buttons/ButtonSendMessage.vue';
 export {default as ButtonShowChat} from '../components/buttons/ButtonShowChat.vue';
+export {default as ButtonMaximize} from '../components/buttons/ButtonMaximize.vue';
 // Messages
 export {default as MessageDefault} from '../components/messages/MessageDefault.vue';
 export {default as MessageImageCard} from '../components/messages/MessageImageCard.vue';

@@ -1,4 +1,8 @@
 @import './mixins';
+#app {
+    width: 100dvw;
+    height: 100dvh;
+}
 .app-chatbot {
     height: 100%;
     display: flex;
@@ -15,8 +19,15 @@
 
     @include mq-480 {
         height: 66%;
-        max-width: 48rem;
+        width: 48rem;
         left: auto;
+        transition: width .4s ease-in-out, height .4s ease-in-out;
+        
+        // Maximizing window
+        &:has(input[class='maximize-toggler']:checked) {
+            height: 100%;
+            width: 100%;
+        }
     }
 }
 .chatbot-container--hidden {
