@@ -73,9 +73,8 @@ Requisites:
 * Send Messages *
 
 Sending message data: ✔
-    input > app > chat
     
-- Try it with Vuex
+- Try it with Vuex ✔
 
 
 * Toggle Chatbot Window * ✔

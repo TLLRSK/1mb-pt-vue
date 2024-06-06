@@ -4,12 +4,8 @@
     v-if="isChatbotOpen">
 
       <div class="chatbot-container--hidden" v-if="!isChatWindowOpen">
-        <button class="btn--show-chatbot" @click="toggleChatbotWindow">
-          <img src="../public/images/chabot-pfp.gif" alt="">
-        </button>
-        <button class="btn--close-chatbot" @click="closeChatbot">
-          <icon-close/>
-        </button>
+        <button-show-chat/>
+        <button-close-chat/>
       </div>
 
       <div class="chatbot-container--visible" v-else>
@@ -34,7 +30,8 @@ import MessagesContainer from './components/messagesContainer/MessagesContainer.
 import ChatQuestionsCarousel from './components/questionsCarousel/QuestionsCarousel.vue';
 import MessageInput from './components/messageInput/MessageInput.vue';
 import ChatbotFooter from './components/footer/ChatbotFooter.vue';
-import IconClose from './components/icons/IconClose.vue';
+import ButtonCloseChat from './components/buttons/ButtonCloseChat.vue';
+import ButtonShowChat from './components/buttons/ButtonShowChat.vue';
 
 export default {
   components: {
@@ -43,7 +40,8 @@ export default {
     ChatQuestionsCarousel,
     MessageInput,
     ChatbotFooter,
-    IconClose,
+    ButtonCloseChat,
+    ButtonShowChat,
   },
   computed: {
     ...mapState(['isChatbotOpen', 'isChatWindowOpen']),

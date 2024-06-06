@@ -1,8 +1,6 @@
 <template>
     <div class="dropdown-menu">
-        <button class="btn--dropdown-menu" @click="toggleDropdownMenu">
-            <icon-menu/>
-        </button>
+       <button-toggle-dropdown/> 
         <ul :class="['list', {'open': isDropdownMenuOpen}]">
             <li class="list-item" v-for="option in dropdownMenuOptions" :key="option">
                 <button @click="toggleDropdownMenu">{{ option.text }}</button>
@@ -13,10 +11,11 @@
 
 <script>
     import {mapState, mapMutations} from 'vuex';
-    import IconMenu from '../icons/IconMenu.vue';
+    import ButtonToggleDropdown from '../buttons/ButtonToggleDropdown.vue';
+    
     export default {
         components: {
-            IconMenu,
+            ButtonToggleDropdown,
         },
         computed: {
             ...mapState(['isDropdownMenuOpen', 'dropdownMenuOptions']),
