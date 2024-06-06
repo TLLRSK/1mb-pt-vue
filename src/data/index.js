@@ -8,7 +8,7 @@ export const dropdownMenuOptionsData = [
     {text: "Change language"},
     {text: "Access the privacy policy"}
 ];
-export const optionsList = [
+export const chatOptionsList = [
     {text: "Qué es un chatbot"},
     {text: "Para qué sirve"},
     {text: "Qué es 1millionbot"},

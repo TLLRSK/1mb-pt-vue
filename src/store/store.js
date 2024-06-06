@@ -1,5 +1,5 @@
 import { createStore } from 'vuex';
-import { botProfileData, dropdownMenuOptionsData, optionsList, botResponsesData } from '../data';
+import { botProfileData, dropdownMenuOptionsData, chatOptionsList, botResponsesData } from '../data';
 
 export const store = createStore({
   state() {
@@ -29,7 +29,7 @@ export const store = createStore({
         type: 'default',
       },
       botResponses: botResponsesData,
-      optionsCarousel: optionsList,
+      chatOptionsList: chatOptionsList,
     };
   },
   mutations: {
