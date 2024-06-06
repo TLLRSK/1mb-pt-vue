@@ -11,7 +11,7 @@
 
 <script>
     import {mapState, mapMutations} from 'vuex';
-    import ButtonToggleDropdown from '../buttons/ButtonToggleDropdown.vue';
+    import { ButtonToggleDropdown } from '../../data';
     
     export default {
         components: {

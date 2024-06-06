@@ -33,4 +33,31 @@ export const botResponsesData = [
         }
     }
 ];
+
+/*** COMPONENTS ***/
+// Icons
+export {default as IconClose} from '../components/icons/IconClose.vue';
+export {default as IconMenu} from '../components/icons/IconMenu.vue';
+export {default as IconMinimize} from '../components/icons/IconMinimize.vue';
+export {default as IconSend} from '../components/icons/IconSend.vue';
+// Buttons
+export {default as ButtonCloseChat} from '../components/buttons/ButtonCloseChat.vue';
+export {default as ButtonMinimizeChat} from '../components/buttons/ButtonMinimizeChat.vue';
+export {default as ButtonToggleDropdown} from '../components/buttons/ButtonToggleDropdown.vue';
+export {default as ButtonSendMessage} from '../components/buttons/ButtonCloseChat.vue';
+export {default as ButtonShowChat} from '../components/buttons/ButtonShowChat.vue';
+// Messages
+export {default as MessageDefault} from '../components/messages/MessageDefault.vue';
+export {default as MessageImageCard} from '../components/messages/MessageImageCard.vue';
+// Chat window
+export {default as DropdownMenu} from '../components/dropdownMenu/DropdownMenu.vue';
+export {default as TopBar} from '../components/topBar/TopBar.vue';
+export {default as Chat} from '../components/chat/Chat.vue';
+export {default as ChatFooter} from '../components/chatFooter/ChatFooter.vue';
+export {default as ChatInput} from '../components/chatInput/ChatInput.vue';
+export {default as ChatOptionsCarousel} from '../components/chatOptionsCarousel/ChatOptionsCarousel.vue';
+
+
+
+
   

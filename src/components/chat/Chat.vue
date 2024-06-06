@@ -16,8 +16,8 @@
   
   <script>
   import { mapState } from 'vuex';
-  import MessageDefault from '../messages/MessageDefault.vue';
-  import MessageImageCard from '../messages/MessageImageCard.vue';
+  import { MessageDefault, MessageImageCard } from '../../data';
+
   
   export default {
     components: {

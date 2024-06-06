@@ -7,7 +7,8 @@
 
 <script>
     import {mapState} from 'vuex';
-    import ButtonSendMessage from '../buttons/ButtonSendMessage.vue';
+    import { ButtonSendMessage } from '../../data';
+    
 
     export default {
         components: {

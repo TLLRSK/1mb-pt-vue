@@ -21,13 +21,7 @@
 
 <script>
   import { mapState, mapMutations } from 'vuex';
-  import TopBar from './components/topBar/TopBar.vue';
-  import Chat from './components/chat/Chat.vue';
-  import ChatOptionsCarousel from './components/chatOptionsCarousel/ChatOptionsCarousel.vue';
-  import ChatInput from './components/chatInput/ChatInput.vue';
-  import ChatFooter from './components/chatFooter/ChatFooter.vue';
-  import ButtonCloseChat from './components/buttons/ButtonCloseChat.vue';
-  import ButtonShowChat from './components/buttons/ButtonShowChat.vue';
+  import { ButtonCloseChat, ButtonShowChat, Chat, ChatFooter, ChatInput, ChatOptionsCarousel, TopBar } from './data';
 
   export default {
     components: {

@@ -11,8 +11,8 @@
 
 <script>
     import { mapState, mapMutations } from 'vuex';
-    import ButtonMinimizeChat from '../buttons/ButtonMinimizeChat.vue';
-    import DropdownMenu from '../dropdownMenu/DropdownMenu.vue';
+    import { DropdownMenu, ButtonMinimizeChat} from '../../data';
+    
     export default {
         components: {
             DropdownMenu,
