@@ -1,7 +1,7 @@
 <template>
     <div class="swiper chat-questions-carousel">
       <div class="swiper-wrapper">
-        <button class="swiper-slide question" v-for="(question, index) in optionsCarousel" :key="index">
+        <button class="swiper-slide question" v-for="(question, index) in optionsList" :key="index">
           {{ question.text }}
         </button>
       </div>
@@ -18,7 +18,7 @@
   
   export default {
     computed: {
-      ...mapState(['optionsCarousel']),
+      ...mapState(['optionsList']),
     },
     mounted() {
       this.swiper = new Swiper('.swiper', {

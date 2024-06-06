@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import { botProfileData, dropdownMenuOptionsData, optionsList, botResponsesData } from '../data';
 
 export const store = createStore({
   state() {
@@ -6,15 +7,8 @@ export const store = createStore({
       isChatWindowOpen: false,
       isChatbotOpen: true,
       isDropdownMenuOpen: false,
-      botProfile: {
-        imgUrl: "../../public/images/chabot-pfp.gif",
-        name: "Millie"
-      },
-      dropdownMenuOptions: [
-        { text: "Forget user data" },
-        { text: "Change language" },
-        { text: "Access the privacy policy" },
-      ],
+      botProfile: botProfileData,
+      dropdownMenuOptions: dropdownMenuOptionsData,
       messagesLog: [
         {
           author: "chatbot",
@@ -30,31 +24,8 @@ export const store = createStore({
       currentMessage: {
         content: '',
       },
-      botResponses: [
-        {
-          type: "default",
-          content: "random response from chatbot",
-        },
-        {
-          type: "default",
-          content: "another random response",
-        },
-        {
-          type: "imageCard",
-          content: {
-            imgUrl: "public/images/article-image.webp",
-            title: "article title",
-            text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
-            articleUrl: "https://placehold.jp/150x150.png",
-          },
-        },
-      ],
-      optionsCarousel: [
-        {text: "Qué es un chatbot"},
-        {text: "Para qué sirve"},
-        {text: "Qué es 1millionbot"},
-        {text: "Qué es una IA"}
-      ],
+      botResponses: botResponsesData,
+      optionsList: optionsList,
     };
   },
   mutations: {
