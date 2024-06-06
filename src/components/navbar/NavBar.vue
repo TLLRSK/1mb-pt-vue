@@ -1,38 +1,30 @@
 <template>
     <nav class="nav-bar">
-        <button class="btn--toggle-chat-window" @click="toggleChatWindow">
+        <button class="btn--toggle-chat-window" @click="toggleChatbotWindow">
             <icon-minimize/>
         </button>
         <div class="chatbot-profile">
-        <img class="chatbot-img" :src="chatbot.imgUrl" :alt="chatbot.name">
-        <p class="chatbot-name">{{ chatbot.name }}</p>
+            <img class="chatbot-img" :src="botProfile.imgUrl" :alt="botProfile.name">
+            <p class="chatbot-name">{{ botProfile.name }}</p>
         </div>
         <nav-dropdown-menu/>
     </nav>
 </template>
 
 <script>
+    import { mapState, mapMutations } from 'vuex';
     import IconMinimize from '../icons/IconMinimize.vue';
     import NavDropdownMenu from './NavDropdownMenu.vue';
     export default {
-      components: {
-          NavDropdownMenu,
-          IconMinimize,
-      },
-      data() {
-          return {
-              chatbot: {
-              imgUrl: "../../public/images/chabot-pfp.gif",
-              name: "Millie"
-              },
-              isChatWindowOpen: true,
-              isDropdownMenuOpen: false,
-          };
-      },
-      methods: {
-          toggleChatWindow() {
-              this.$emit("toggle-chatbot");
-          },
-      }
+        components: {
+            NavDropdownMenu,
+            IconMinimize,
+        },
+        computed: {
+            ...mapState(['botProfile'])
+        },
+        methods: {
+            ...mapMutations(['toggleChatbotWindow']),
+        }
   }
 </script>

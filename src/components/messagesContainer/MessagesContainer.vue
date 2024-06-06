@@ -1,7 +1,7 @@
 <template>
     <ul class="messages-container" ref="messagesContainer">
-      <template v-for="(message, index) in messages" :key="index">
-        <message
+      <template v-for="(message, index) in messagesLog" :key="index">
+        <message-default
           v-if="message.type === 'default'"
           :message-author="message.author"
           :message-content="message.content"
@@ -15,24 +15,17 @@
   </template>
   
   <script>
-  import Message from '../messages/Message.vue';
+  import { mapState } from 'vuex';
+  import MessageDefault from '../messages/MessageDefault.vue';
   import MessageImageCard from '../messages/MessageImageCard.vue';
   
   export default {
     components: {
-      Message,
+      MessageDefault,
       MessageImageCard,
     },
-    props: {
-      messagesLog: {
-        type: Array,
-        required: true,
-      },
-    },
-    data() {
-      return {
-        messages: this.messagesLog,
-      };
+    computed: {
+      ...mapState(['messagesLog']),
     },
     updated() {
       this.scrollToBottom();

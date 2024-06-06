@@ -3,8 +3,8 @@
         <button class="btn--dropdown-menu" @click="toggleDropdownMenu">
             <icon-menu/>
         </button>
-        <ul :class="['list', {'open': isMenuOpen}]">
-            <li class="list-item" v-for="option in menuOptions" :key="option">
+        <ul :class="['list', {'open': isDropdownMenuOpen}]">
+            <li class="list-item" v-for="option in dropdownMenuOptions" :key="option">
                 <button @click="toggleDropdownMenu">{{ option.text }}</button>
             </li>
         </ul>
@@ -12,25 +12,17 @@
 </template>
 
 <script>
+    import {mapState, mapMutations} from 'vuex';
     import IconMenu from '../icons/IconMenu.vue';
     export default {
         components: {
             IconMenu,
         },
-        data() {
-            return {
-                menuOptions: [
-                    { text: "Forget user data"},
-                    { text: "Change language"},
-                    { text: "Access the privacy policy"},
-                ],
-                isMenuOpen: false,
-            }
+        computed: {
+            ...mapState(['isDropdownMenuOpen', 'dropdownMenuOptions']),
         },
         methods: {
-            toggleDropdownMenu() {
-                this.isMenuOpen = !this.isMenuOpen;
-            }
+            ...mapMutations(['toggleDropdownMenu']),
         }
     }
 </script>

@@ -105,6 +105,12 @@ Sending message data: ✔
     - Changing width and height on clicking fullscreen button (navbar).
 
 
+* Disabling and enabling message input *
+1. Button send disabled by default
+2. Check if input text has content
+3. If true, enable
+
+
 * Show chatbot is writing message *
 
 1. Set a timeout

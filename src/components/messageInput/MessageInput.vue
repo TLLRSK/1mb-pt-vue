@@ -1,6 +1,6 @@
 <template>
     <form class="form">
-        <input class="input" type="text" placeholder="Escribe tu pregunta" v-model="messageContent">
+        <input class="input" type="text" placeholder="Escribe tu pregunta" v-model="currentMessage.content">
         <button class="btn--send-message" @click.prevent="sendMessage">
             <icon-send/>
         </button>
@@ -8,24 +8,18 @@
 </template>
 
 <script>
-import IconSend from '../icons/IconSend.vue';
+    import {mapState, mapActions} from 'vuex';
+    import IconSend from '../icons/IconSend.vue';
 
     export default {
         components: {
             IconSend,
         },
-        data() {
-            return {
-                messageContent: "",
-                author: "user",
-            }
+        computed: {
+            ...mapState(['currentMessage'],)
         },
         methods: {
-            sendMessage()  {
-                const message = { content: this.messageContent, author: this.author}
-                this.$emit('send-message', message);
-                this.messageContent = "";
-            }
+           ...mapActions(['sendMessage']),
         }
     }
 </script>
