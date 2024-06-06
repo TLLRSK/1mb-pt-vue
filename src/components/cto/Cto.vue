@@ -1,5 +1,5 @@
 <template>
-    <button class="cto" v-if="isCtoVisible" @click="toggleChatbotWindow">
+    <button class="cto" v-if="isCtoOpen" @click="showChatWindow">
         <button-close-cto/>
         <p class="cto-message">¿En qué puedo ayudarte?</p>
     </button>
@@ -7,16 +7,16 @@
 <script>
     import { mapState } from 'vuex';
     import {ButtonCloseCto} from '../../data'
-    import { mapMutations } from 'vuex';
+    import { mapActions } from 'vuex';
     export default {
         components: {
             ButtonCloseCto,
         },
         computed: {
-            ...mapState(['isCtoVisible']),
+            ...mapState(['isFirstVisit', 'isCtoOpen']),
         },
         methods: {
-            ...mapMutations(['toggleChatbotWindow']),
+            ...mapActions(['showChatWindow']),
         },
     }
 </script>

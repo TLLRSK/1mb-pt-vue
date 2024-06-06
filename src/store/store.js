@@ -5,7 +5,8 @@ export const store = createStore({
   state() {
     return {
       isChatbotOpen: true,
-      isCtoVisible: true,
+      isFirstVisit: true,
+      isCtoOpen: true,
       isChatWindowOpen: false,
       isDropdownMenuOpen: false,
       botProfile: botProfileData,
@@ -32,11 +33,15 @@ export const store = createStore({
     };
   },
   mutations: {
-    closeChatbot(state) {
-      state.isChatbotOpen = false;
+    setIsFirstVisit(state, value) {
+      console.log("is first visit?")
+      state.isFirstVisit = value;
     },
     closeCto(state) {
-      state.isCtoVisible = false;
+      state.isCtoOpen = false;
+    },
+    closeChatbot(state) {
+      state.isChatbotOpen = false;
     },
     toggleChatbotWindow(state) {
       state.isChatWindowOpen = !state.isChatWindowOpen;
@@ -85,5 +90,11 @@ export const store = createStore({
         commit('sendResponse');
       }, 500);
     },
+    showChatWindow({commit, state}) {
+      if (state.isCtoOpen) {
+        commit('closeCto');
+      }
+      commit('toggleChatbotWindow')
+    }  
   },
 });

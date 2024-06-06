@@ -5,5 +5,6 @@ import './scss/style.scss';
 import {store} from './store/store.js';
 const app = createApp(App)
 register();
-app.use(store)
-app.mount('#app')
+
+app.use(store);
+app.mount('#app');

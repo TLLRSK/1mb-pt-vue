@@ -1,17 +1,17 @@
 <template>
-    <button class="btn--show-chatbot" @click="toggleChatbotWindow">
+    <button class="btn--show-chatbot" @click="showChatWindow">
         <img :src="botProfile.imgUrl" alt="">
     </button>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapActions } from 'vuex'
     export default {
         computed: {
             ...mapState(['botProfile']),
         },
         methods: {
-            ...mapMutations(['toggleChatbotWindow'])
+            ...mapActions(['showChatWindow'])
         }
     }
 </script>
