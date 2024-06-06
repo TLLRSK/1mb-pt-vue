@@ -3,9 +3,17 @@
     gap: $gap--m;
     position: absolute;
     right: calc(100% + $margin--m);
-    width: max-content;
+    width: calc(100dvw - 100% - $margin--m*3);
     background-color: $gray;
     padding: $p--m;
     border-radius: $rounded--m;
     border-bottom-right-radius: 0;
+
+    &-message {
+        text-align: left;
+    }
+
+    @include mq-480 {
+        width: max-content;
+    }
 }
