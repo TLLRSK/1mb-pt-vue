@@ -1,35 +1,13 @@
 .chat-questions-carousel {
-    padding: $p--s;
-    position: relative;
     height: fit-content;
+    position: relative;
     .question {
         width: fit-content;
+        height: fit-content;
         padding: $p--s*.25 $p--s;
+        margin: $margin--s;
         border: 1px solid $black;
         border-radius: $rounded--m;
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 5.6rem;
-        height: 5.6rem;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: $white;
-        color: $black;
-        margin: 0;
-        border: 1px solid $gray;
-        &::after {
-            font-size: $font--l;
-        }
-    }
-    .swiper-button-next {
-        right: 0;
-    }
-    .swiper-button-prev {
-        left: 0;
-    }
-    .swiper-button-disabled {
-        display: none;
     }
 }
 

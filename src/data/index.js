@@ -15,22 +15,36 @@ export const chatOptionsList = [
     {text: "Qué es una IA"}
 ];
 export const botResponsesData = [
-    {
-        type: "default",
-        content: "random response from chatbot"
-    },
-    {
-        type: "default",
-        content: "another random response"
-    },
+    // {
+    //     type: "default",
+    //     content: "random response from chatbot"
+    // },
+    // {
+    //     type: "default",
+    //     content: "another random response"
+    // },
     {
         type: "imageCard",
-        content: {
-        imgUrl: "public/images/article-image.webp",
-        title: "article title",
-        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
-        articleUrl: "https://placehold.jp/150x150.png"
-        }
+        content: [
+            {
+                imgUrl: "public/images/article-image.webp",
+                title: "article title",
+                text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
+                articleUrl: "https://placehold.jp/150x150.png"
+            },
+            {
+                imgUrl: "public/images/article-image.webp",
+                title: "article title",
+                text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
+                articleUrl: "https://placehold.jp/150x150.png"
+            },
+            {
+                imgUrl: "public/images/article-image.webp",
+                title: "article title",
+                text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
+                articleUrl: "https://placehold.jp/150x150.png"
+            },
+        ]
     }
 ];
 
@@ -50,9 +64,11 @@ export {default as ButtonToggleDropdown} from '../components/buttons/ButtonToggl
 export {default as ButtonSendMessage} from '../components/buttons/ButtonSendMessage.vue';
 export {default as ButtonShowChat} from '../components/buttons/ButtonShowChat.vue';
 export {default as ButtonMaximize} from '../components/buttons/ButtonMaximize.vue';
+
 // Messages
 export {default as MessageDefault} from '../components/messages/MessageDefault.vue';
 export {default as MessageImageCard} from '../components/messages/MessageImageCard.vue';
+
 // Chat window
 export {default as Cto} from '../components/cto/Cto.vue';
 export {default as DropdownMenu} from '../components/dropdownMenu/DropdownMenu.vue';

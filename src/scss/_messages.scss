@@ -20,12 +20,15 @@
   }
 
   &--image-card {
-    padding: 0;
+    padding: $p--s;
     .article {
       display: flex;
       flex-direction: column;
+      padding: $p--s;
       gap: $gap--s;
       margin: 0;
+      margin-bottom: $margin--s;
+      border: 1px solid $gray;
       &-img {
         margin: $margin--s;
       }

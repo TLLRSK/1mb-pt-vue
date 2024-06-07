@@ -1,34 +1,74 @@
 <template>
-    <div class="swiper chat-questions-carousel">
-      <div class="swiper-wrapper">
-        <button class="swiper-slide question" v-for="(question, index) in chatOptionsList" :key="index">
+    <swiper-container ref="ChatOptionsContainer" class="chat-questions-carousel"
+    >
+      <swiper-slide class="question" v-for="(question, index) in chatOptionsList" :key="index">
+        <button>
           {{ question.text }}
         </button>
-      </div>
-      
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>  
-    </div>
-    
-  </template>
-  
-  <script>
-  import Swiper from 'swiper';
+      </swiper-slide>
+    </swiper-container>
+</template>
+
+<script>
   import { mapState } from 'vuex';
-  
   export default {
     computed: {
       ...mapState(['chatOptionsList']),
     },
     mounted() {
-      this.swiper = new Swiper('.swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: '16',
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
-    },
+    const swiperEl = this.$refs.ChatOptionsContainer;
+    const swiperShadowRoot = swiperEl.shadowRoot;
+    const style = document.createElement('style');
+    style.textContent = `
+      .swiper-button-prev, .swiper-button-next {
+        width: 2.8rem !important;
+        height: auto !important;
+        position: absolute;
+        background-color: oklch(100% 0 0);
+        color: black;
+        margin: 0;
+        top: 0 !important;
+        bottom: 0 !important;
+        margin: 0 !important;
+        // border-radius: 50%;
+
+        svg {
+          position: inherit;
+          width: fit-content !important;
+          height: 2rem !important;
+
+          path {
+            fill: oklch(95% 0 0);
+          }
+        }
+      }
+
+      .swiper-button-next {
+        right: 0 !important;
+        border-left: 1px solid oklch(95% 0 0);
+      }
+      .swiper-button-prev {
+        left: 0 !important;
+        border-right: 1px solid oklch(95% 0 0);
+      }
+    `;
+
+    swiperShadowRoot.appendChild(style);
+    
+    const swiperParams = {
+      slidesPerView: 'auto',
+      spaceBetween: '16',
+      navigation: {
+        enabled: true,
+      },
+    };
+
+    Object.assign(swiperEl, swiperParams);
+    swiperEl.initialize();
+  }
   };
   </script>
+
+  <style scoped>
+  
+  </style>

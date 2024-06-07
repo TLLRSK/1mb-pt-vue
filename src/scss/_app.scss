@@ -21,7 +21,9 @@
         height: 66%;
         width: 48rem;
         left: auto;
-        transition: width .4s ease-in-out, height .4s ease-in-out;
+        transition: 
+            width .4s ease-in-out,
+            height .4s ease-in-out;
         
         // Maximizing window
         &:has(input[class='maximize-toggler']:checked) {

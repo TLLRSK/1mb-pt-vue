@@ -61,24 +61,8 @@ export const store = createStore({
       let formattedResponse = {
         author: "chatbot",
         type: selectedResponse.type,
-        content: null,
+        content: selectedResponse.content
       };
-
-      switch (selectedResponse.type) {
-        case "default":
-          formattedResponse.content = selectedResponse.content;
-          break;
-        case "imageCard":
-          formattedResponse.content = {
-            imgUrl: selectedResponse.content.imgUrl,
-            title: selectedResponse.content.title,
-            text: selectedResponse.content.text,
-            articleUrl: selectedResponse.content.articleUrl,
-          };
-          break;
-        default:
-          break;
-      }
 
       state.messagesLog.push(formattedResponse);
     },
