@@ -3,6 +3,7 @@
     class="swiper-container message--image-card"
     style="
       --swiper-theme-color: oklch(69.71% 0.227 28.59);
+      z-index: 0;
     "
   >
     <swiper-slide class="swiper-slide article"
