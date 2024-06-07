@@ -31,13 +31,15 @@
       this.scrollToBottom();
     },
     methods: {
-      scrollToBottom() {
-        const messagesContainer = this.$refs.messagesContainer;
+    scrollToBottom() {
+      const messagesContainer = this.$refs.messagesContainer;
+      setTimeout(() => {
         if (messagesContainer) {
           messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
-      },
+      }, 10);
     },
+  },
   };
   </script>
   

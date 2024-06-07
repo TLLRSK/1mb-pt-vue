@@ -1,7 +1,7 @@
 <template>
     <swiper-container ref="ChatOptionsContainer" class="chat-questions-carousel"
     >
-      <swiper-slide class="question" v-for="(option, index) in chatOptionsList" :key="index">
+      <swiper-slide class="option" v-for="(option, index) in chatOptionsList" :key="index">
         <button-chat-option :option="option"></button-chat-option>
       </swiper-slide>
     </swiper-container>
@@ -18,6 +18,7 @@
       ...mapState(['chatOptionsList']),
     },
     mounted() {
+    // Overriding swiper shadow-root stylesheet
     const swiperEl = this.$refs.ChatOptionsContainer;
     const swiperShadowRoot = swiperEl.shadowRoot;
     const style = document.createElement('style');
@@ -32,7 +33,6 @@
         top: 0 !important;
         bottom: 0 !important;
         margin: 0 !important;
-        // border-radius: 50%;
 
         svg {
           position: inherit;
