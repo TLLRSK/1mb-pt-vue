@@ -30,7 +30,10 @@
             display: block;
         }
     }
-
+    &--menu-item {
+        padding: $p--s;
+        width: 100%;
+    }
     &--send-message {
         position: absolute;
         right: 0;

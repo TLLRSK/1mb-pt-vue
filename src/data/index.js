@@ -61,6 +61,7 @@ export {default as ButtonCloseCto} from '../components/buttons/ButtonCloseCto.vu
 export {default as ButtonCloseChat} from '../components/buttons/ButtonCloseChat.vue';
 export {default as ButtonMinimizeChat} from '../components/buttons/ButtonMinimizeChat.vue';
 export {default as ButtonToggleDropdown} from '../components/buttons/ButtonToggleDropdown.vue';
+export {default as ButtonMenuItem} from '../components/buttons/ButtonMenuItem.vue';
 export {default as ButtonSendMessage} from '../components/buttons/ButtonSendMessage.vue';
 export {default as ButtonShowChat} from '../components/buttons/ButtonShowChat.vue';
 export {default as ButtonMaximize} from '../components/buttons/ButtonMaximize.vue';

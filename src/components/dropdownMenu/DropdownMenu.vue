@@ -3,7 +3,7 @@
        <button-toggle-dropdown/> 
         <ul :class="['list', {'open': isDropdownMenuOpen}]">
             <li class="list-item" v-for="option in dropdownMenuOptions" :key="option">
-                <button @click="toggleDropdownMenu">{{ option.text }}</button>
+                <button-menu-item :option="option"></button-menu-item>
             </li>
         </ul>
     </div>
@@ -11,11 +11,12 @@
 
 <script>
     import {mapState, mapMutations} from 'vuex';
-    import { ButtonToggleDropdown } from '../../data';
+    import { ButtonToggleDropdown, ButtonMenuItem } from '../../data';
     
     export default {
         components: {
             ButtonToggleDropdown,
+            ButtonMenuItem,
         },
         computed: {
             ...mapState(['isDropdownMenuOpen', 'dropdownMenuOptions']),

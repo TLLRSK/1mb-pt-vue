@@ -1,16 +1,19 @@
 .dropdown-menu {
     margin-left: auto;
     z-index: 3;
+    
     .list {
         display: none;
         position: absolute;
         top: 100%;
         right: 0;
         background-color: white;
-
+        border-left: 1px solid $gray--200;
         .list-item {
-            padding: $p--m;
-            border-bottom: 1px solid $gray;
+            border-bottom: 1px solid $gray--200;
+            &:hover {
+                background-color: $gray--100;
+            }
         }
     }
     .list.open {
