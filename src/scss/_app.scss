@@ -12,6 +12,7 @@
     bottom: 0;
     left: 0;
     overflow: hidden;
+    border-radius: $rounded--s;
 
     &.closed {
         display: none;
@@ -38,10 +39,13 @@
 .chatbot-container--minimized {
     width: 8rem;
     height: 8rem;
-    
     position: fixed;
     bottom: $margin--m;
     right: $margin--m;
+    opacity: .9;
+    &:hover {
+        opacity: 1;
+    }
 }
 .chatbot-container--default {
     height: 100%;

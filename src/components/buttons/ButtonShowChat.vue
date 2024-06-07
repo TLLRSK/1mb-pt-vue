@@ -1,5 +1,5 @@
 <template>
-    <button class="btn--show-chatbot" @click="showChatWindow">
+    <button class="btn btn--show-chatbot" @click="showChatWindow">
         <img :src="botProfile.imgUrl" alt="">
     </button>
 </template>

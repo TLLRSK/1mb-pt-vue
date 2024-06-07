@@ -1,5 +1,5 @@
 <template>
-    <button class="btn--close-chatbot" @click="closeChatbot">
+    <button class="btn btn--close-chatbot" @click="closeChatbot">
         <icon-close/>
     </button>
 </template>

@@ -10,14 +10,13 @@
     font-family: "source sans 3", Arial, Helvetica, sans-serif;
 }
 
-h2, p,a {
+h2, p, a {
     font-size: $font--m;
 }
  
 .question,
 .input,
 .list-item,
-.btn--send-message,
-.btn--dropdown-menu {
+.btn {
     font-size: $font--m;
 }

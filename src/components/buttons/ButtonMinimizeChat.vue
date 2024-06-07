@@ -1,5 +1,5 @@
 <template>
-    <button class="btn--toggle-chat-window" @click="toggleChatbotWindow">
+    <button class="btn btn--minimize" @click="toggleChatbotWindow">
         <icon-minimize/>
     </button>
 </template>

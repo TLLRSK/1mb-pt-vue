@@ -1,13 +1,9 @@
 .chat-questions-carousel {
     height: fit-content;
     position: relative;
-    .question {
+    .option {
         width: fit-content;
         height: fit-content;
-        padding: $p--s*.25 $p--s;
-        margin: $margin--s;
-        border: 1px solid $black;
-        border-radius: $rounded--m;
     }
 }
 

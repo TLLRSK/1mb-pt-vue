@@ -1,5 +1,5 @@
 <template>
-    <button class="btn--close-cto" @click.stop="closeCto">
+    <button class="btn btn--close-cto" @click.stop="closeCto">
         <icon-close/>
     </button>
 </template>

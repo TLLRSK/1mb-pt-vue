@@ -1,32 +1,46 @@
 .btn {
+    cursor: pointer;
+    min-width: 2.4rem;
+    min-height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--maximize,
+    &--minimize,
+    &--dropdown-menu {
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        padding: $p--s*.5;
+        &:hover {
+            background-color: $white;
+            path {
+                fill: $main;
+            }
+        }
+    }
+    &--maximize {
+        display: none;
+        .maximize-toggler {
+            appearance: none;
+            position: absolute;
+        }
+        @include mq-480 {
+            display: block;
+        }
+    }
+
     &--send-message {
         position: absolute;
         right: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: $p--m;
         background-color: $main;
         color: $white;
         border-top-left-radius: $rounded--l;
         &[disabled] {
-            background-color: $gray;
+            background-color: $gray--100;
         }
-    }
-    &--dropdown-menu {
-        color: $white;
-        width: 2.4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }   
-    &--toggle-chat-window {
-        width: 2.4rem;
-        height: 2.4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
     }
     &--show-chatbot {
         overflow: hidden;
@@ -39,10 +53,9 @@
         position: absolute;
         top: -$margin--m;
         right: 0;
+        background-color: $white;
     }
     &--close-cto {
-        width: 2.4rem;
-        height: 2.4rem;
         border-radius: 50%;
         &:hover { 
             background-color: $black;
@@ -51,11 +64,18 @@
             }
         }
     }
-    &--maximize {
-        cursor: pointer;
-        .maximize-toggler {
-            appearance: none;
-            position: absolute;
+    &--chat-option {
+        width: fit-content;
+        height: fit-content;
+        padding: $p--s*.25 $p--s;
+        margin: $margin--s;
+        color: $black;
+        border: 1px solid $black;
+        border-radius: $rounded--m;
+        opacity: .6;
+        &:hover {
+            background-color: $black;
+            color: $white;
         }
     }
 }

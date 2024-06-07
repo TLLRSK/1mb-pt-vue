@@ -12,7 +12,9 @@
     &-message {
         text-align: left;
     }
-
+    &:hover {
+        background-color: $gray--100;
+    }
     @include mq-480 {
         width: max-content;
     }

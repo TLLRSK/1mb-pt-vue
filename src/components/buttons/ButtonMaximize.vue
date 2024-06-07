@@ -1,5 +1,5 @@
 <template>
-    <label for="maximize" class="btn--maximize">
+    <label for="maximize" class="btn btn--maximize">
         <input type="checkbox" id="maximize" class="maximize-toggler">
         <icon-maximize/>
     </label>

@@ -1,5 +1,5 @@
 <template>
-  <button @click="handleClick">
+  <button class="btn btn--chat-option" @click="handleClick">
     {{ option.text }}
   </button>
 </template>

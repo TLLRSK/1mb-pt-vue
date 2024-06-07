@@ -1,5 +1,5 @@
 <template>
-    <button class="btn--send-message" @click.prevent="sendMessage" :disabled="isDisabled">
+    <button class="btn btn--send-message" @click.prevent="sendMessage" :disabled="isDisabled">
         <icon-send/>
     </button>
 </template>

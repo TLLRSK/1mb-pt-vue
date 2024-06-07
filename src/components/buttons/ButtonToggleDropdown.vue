@@ -1,5 +1,5 @@
 <template>
-    <button class="btn--dropdown-menu" @click="toggleDropdownMenu">
+    <button class="btn btn--dropdown-menu" @click="toggleDropdownMenu">
         <icon-menu/>
     </button>
 </template>
