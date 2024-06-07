@@ -38,18 +38,18 @@
           height: 2rem !important;
 
           path {
-            fill: oklch(95% 0 0);
+            fill: oklch(77.89% 0 0);
           }
         }
       }
 
       .swiper-button-next {
         right: 0 !important;
-        border-left: 1px solid oklch(95% 0 0);
+        border-left: 1px solid oklch(77.89% 0 0);
       }
       .swiper-button-prev {
         left: 0 !important;
-        border-right: 1px solid oklch(95% 0 0);
+        border-right: 1px solid oklch(77.89% 0 0);
       }
     `;
 
