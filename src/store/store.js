@@ -50,6 +50,7 @@ export const store = createStore({
       state.isDropdownMenuOpen = !state.isDropdownMenuOpen;
     },
     sendMessage(state) {
+      // console.log("current: ", state.currentMessage)
       const message = state.currentMessage;
       state.messagesLog.push({ author: message.author, content: message.content, type: message.type });
       state.currentMessage.content = '';
@@ -69,6 +70,13 @@ export const store = createStore({
   },
   actions: {
     sendMessage({ commit }) {
+      commit('sendMessage');
+      setTimeout(() => {
+        commit('sendResponse');
+      }, 500);
+    },
+    sendOption({state, commit}, option) {
+      state.currentMessage = {...state.currentMessage, content: option.text};
       commit('sendMessage');
       setTimeout(() => {
         commit('sendResponse');

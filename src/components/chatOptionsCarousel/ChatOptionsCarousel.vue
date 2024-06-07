@@ -1,17 +1,19 @@
 <template>
     <swiper-container ref="ChatOptionsContainer" class="chat-questions-carousel"
     >
-      <swiper-slide class="question" v-for="(question, index) in chatOptionsList" :key="index">
-        <button>
-          {{ question.text }}
-        </button>
+      <swiper-slide class="question" v-for="(option, index) in chatOptionsList" :key="index">
+        <button-chat-option :option="option"></button-chat-option>
       </swiper-slide>
     </swiper-container>
 </template>
 
 <script>
   import { mapState } from 'vuex';
+  import {ButtonChatOption} from '../../data';
   export default {
+    components: {
+      ButtonChatOption,
+    },
     computed: {
       ...mapState(['chatOptionsList']),
     },

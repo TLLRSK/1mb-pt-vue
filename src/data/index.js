@@ -64,6 +64,7 @@ export {default as ButtonToggleDropdown} from '../components/buttons/ButtonToggl
 export {default as ButtonSendMessage} from '../components/buttons/ButtonSendMessage.vue';
 export {default as ButtonShowChat} from '../components/buttons/ButtonShowChat.vue';
 export {default as ButtonMaximize} from '../components/buttons/ButtonMaximize.vue';
+export {default as ButtonChatOption} from '../components/buttons/ButtonChatOption.vue';
 
 // Messages
 export {default as MessageDefault} from '../components/messages/MessageDefault.vue';
