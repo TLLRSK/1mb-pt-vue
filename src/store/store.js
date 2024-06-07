@@ -50,7 +50,6 @@ export const store = createStore({
       state.isDropdownMenuOpen = !state.isDropdownMenuOpen;
     },
     sendMessage(state) {
-      // console.log("current: ", state.currentMessage)
       const message = state.currentMessage;
       state.messagesLog.push({ author: message.author, content: message.content, type: message.type });
       state.currentMessage.content = '';
@@ -58,7 +57,6 @@ export const store = createStore({
     sendResponse(state) {
       const randomIndex = Math.floor(Math.random() * state.botResponses.length);
       const selectedResponse = state.botResponses[randomIndex];
-
       let formattedResponse = {
         author: "chatbot",
         type: selectedResponse.type,
@@ -72,15 +70,16 @@ export const store = createStore({
     sendMessage({ commit }) {
       commit('sendMessage');
       setTimeout(() => {
+        console.log("responding")
         commit('sendResponse');
-      }, 500);
+      }, 2000);
     },
     sendOption({state, commit}, option) {
       state.currentMessage = {...state.currentMessage, content: option.text};
       commit('sendMessage');
       setTimeout(() => {
         commit('sendResponse');
-      }, 500);
+      }, 2000);
     },
     showChatWindow({commit, state}) {
       if (state.isCtoOpen) {
