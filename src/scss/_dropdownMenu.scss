@@ -8,13 +8,6 @@
         top: 100%;
         right: 0;
         background-color: white;
-        border-left: 1px solid $gray--200;
-        .list-item {
-            border-bottom: 1px solid $gray--200;
-            &:hover {
-                background-color: $gray--100;
-            }
-        }
     }
     .list.open {
         display: flex;

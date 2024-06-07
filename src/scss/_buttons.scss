@@ -33,16 +33,30 @@
     &--menu-item {
         padding: $p--s;
         width: 100%;
+        border-bottom: 1px solid $gray--200;
+        border-left: 1px solid $gray--200;
+        @include mq-480 {
+            &:hover {
+                background-color: $gray--200;
+                color: $white;
+            }
+        }
     }
     &--send-message {
-        position: absolute;
-        right: 0;
-        padding: $p--m;
+        padding: $p--s $p--m;
         background-color: $main;
-        color: $white;
         border-top-left-radius: $rounded--l;
-        &[disabled] {
-            background-color: $gray--100;
+        transition: padding .2s ease-in-out, background-color .1s ease-in-out;
+        &[disabled]{
+            cursor: default;
+            background-color: $gray--200;
+        }
+        &:not([disabled]) {
+            @include mq-480 {
+                &:hover {
+                    padding-right: $p--s*2;
+                }
+            }
         }
     }
     &--show-chatbot {
@@ -71,14 +85,16 @@
         width: fit-content;
         height: fit-content;
         padding: $p--s*.25 $p--s;
-        margin: $margin--s;
+        margin: $margin--s 0;
         color: $black;
         border: 1px solid $black;
         border-radius: $rounded--m;
         opacity: .6;
-        &:hover {
-            background-color: $black;
-            color: $white;
+        @include mq-480 {
+            &:hover {
+                background-color: $black;
+                color: $white;
+            }
         }
     }
 }

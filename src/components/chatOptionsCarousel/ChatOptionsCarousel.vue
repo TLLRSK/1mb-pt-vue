@@ -23,8 +23,9 @@
     const swiperShadowRoot = swiperEl.shadowRoot;
     const style = document.createElement('style');
     style.textContent = `
+ 
       .swiper-button-prev, .swiper-button-next {
-        width: 2.8rem !important;
+        width: 4rem !important;
         height: auto !important;
         position: absolute;
         background-color: oklch(100% 0 0);
@@ -33,6 +34,7 @@
         top: 0 !important;
         bottom: 0 !important;
         margin: 0 !important;
+        opacity: .9;
 
         svg {
           position: inherit;
@@ -44,6 +46,9 @@
           }
         }
       }
+      .swiper-button-prev:hover, .swiper-button-next:hover {
+        opacity: 1;
+      }
 
       .swiper-button-next {
         right: 0 !important;
@@ -53,6 +58,8 @@
         left: 0 !important;
         border-right: 1px solid oklch(77.89% 0 0);
       }
+      .swiper-button-disabled {
+      display: none !important}
     `;
 
     swiperShadowRoot.appendChild(style);
