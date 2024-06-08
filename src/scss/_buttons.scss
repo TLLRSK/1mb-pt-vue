@@ -32,15 +32,12 @@
             appearance: none;
             position: absolute;
     }
-    &--menu-item {
+    &--dropdown-menu-item {
         padding: $p--s;
         width: 100%;
-        border-bottom: 1px solid $gray--200;
-        border-left: 1px solid $gray--200;
         @include mq-480 {
             &:hover {
-                background-color: $gray--200;
-                color: $white;
+                background-color: $gray;
             }
         }
     }

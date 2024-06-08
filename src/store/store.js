@@ -54,8 +54,9 @@ export const store = createStore({
   },
   actions: {
     async processResponse({commit, state}) {
-      commit('setIsProcessing', true);
-
+      setTimeout(() => {
+        commit('setIsProcessing', true);
+      }, 750)
       const getResponse = () => {
         return new Promise((resolve) => {
           setTimeout(() => {

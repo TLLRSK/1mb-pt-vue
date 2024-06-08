@@ -4,7 +4,7 @@
 
         <ul class="dropdown-menu" @mouseleave="closeMenu" ref="dropdownMenu">
             <li class="dropdown-menu-item" v-for="option in dropdownMenuOptions" :key="option">
-                <button-dropdown-menu-item :option="option"></button-dropdown-menu-item>
+                <button-dropdown-menu-item :option="option" @closeMenu="closeMenu"></button-dropdown-menu-item>
             </li>
         </ul>
     </div>

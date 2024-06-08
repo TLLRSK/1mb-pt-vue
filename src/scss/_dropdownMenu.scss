@@ -8,6 +8,17 @@
         top: 100%;
         right: 0;
         background-color: white;
+        border-left: 1px solid $gray--200;
+        border-bottom: 1px solid $gray--200;
+        border-bottom-left-radius: $rounded--m;
+        overflow: hidden;
+
+        &-item {
+            border-bottom: 1px solid $gray--200;
+            &:nth-last-child(1) {
+                border: none;
+            }
+        }
     }
     &:has(input[class='dropdown-toggler']:checked) {
         .dropdown-menu {
