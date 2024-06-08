@@ -3,6 +3,7 @@
   max-width: 66%;
   background-color: $white;
   padding: $p--m;
+  transition: max-width .4s ease-in-out;
 }
 
 .message {
