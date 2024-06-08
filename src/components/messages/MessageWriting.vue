@@ -1,10 +1,5 @@
 <template>
-    <li class="message--chatbot">
-      <p>Writing</p>
+    <li class="message--chatbot anim--fading">
+      <p>Escribiendo respuesta...</p>
     </li>
 </template>
-<script>
-    export default {
-
-    }
-</script>
