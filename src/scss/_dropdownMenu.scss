@@ -2,7 +2,7 @@
     margin-left: auto;
     z-index: 3;
     .dropdown-menu {
-        display: none;
+        display: flex;
         flex-direction: column;
         position: absolute;
         top: 100%;
@@ -12,6 +12,8 @@
         border-bottom: 1px solid $gray--200;
         border-bottom-left-radius: $rounded--m;
         overflow: hidden;
+        max-height: 0;
+        transition: max-height .6s ease-in-out;
 
         &-item {
             border-bottom: 1px solid $gray--200;
@@ -22,7 +24,7 @@
     }
     &:has(input[class='dropdown-toggler']:checked) {
         .dropdown-menu {
-            display: flex;
+            max-height: 99rem;
         }
     }
 }
