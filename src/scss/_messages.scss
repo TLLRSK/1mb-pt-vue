@@ -4,7 +4,7 @@
   max-width: 66%;
   background-color: $white;
   padding: $p--s $p--m;
-  transition: max-width .4s ease-in-out;
+  transition: max-width .6s ease-in-out;
 }
 
 .app-chatbot.fullscreen {
@@ -28,6 +28,7 @@
     color: $white;
     border-top-right-radius: 0;
     margin: $margin--m 0 $margin--m auto;
+    animation: showingMessage .3s;
   }
   
   &--chatbot {
