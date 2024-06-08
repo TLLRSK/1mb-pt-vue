@@ -2,9 +2,9 @@
     <div class="dropdown-menu-container">
        <button-toggle-dropdown @togglingMenu="toggleMenu"/> 
 
-        <ul class="dropdown-menu"@mouseleave="closeMenu" ref="dropdownMenu">
+        <ul class="dropdown-menu" @mouseleave="closeMenu" ref="dropdownMenu">
             <li class="dropdown-menu-item" v-for="option in dropdownMenuOptions" :key="option">
-                <button-menu-item :option="option"></button-menu-item>
+                <button-dropdown-menu-item :option="option"></button-dropdown-menu-item>
             </li>
         </ul>
     </div>
@@ -12,12 +12,12 @@
 
 <script>
     import {mapState} from 'vuex';
-    import { ButtonToggleDropdown, ButtonMenuItem } from '../../data';
+    import { ButtonToggleDropdown, ButtonDropdownMenuItem } from '../../data';
     
     export default {
         components: {
             ButtonToggleDropdown,
-            ButtonMenuItem,
+            ButtonDropdownMenuItem,
         },
         data()  {
             return {
