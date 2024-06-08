@@ -1,6 +1,6 @@
 <template>
   <section 
-    :class="['app-chatbot', {'closed': !isChatbotOpen}]"
+    :class="['app-chatbot', {'closed': !isChatbotOpen, 'fullscreen': isFullscreen}]"
     v-if="isChatbotOpen">
 
       <div :class="['chatbot-container--' + (isChatWindowOpen ? 'hidden' : 'minimized')]">
@@ -36,7 +36,7 @@
       ChatFooter,
     },
     computed: {
-      ...mapState(['isChatbotOpen', 'isChatWindowOpen']),
+      ...mapState(['isChatbotOpen', 'isChatWindowOpen', 'isFullscreen']),
     },
     methods: {
       ...mapMutations(['toggleChatbotWindow', 'closeChatbot']),

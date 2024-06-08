@@ -1,6 +1,6 @@
 <template>
     <header class="top-bar">
-        <button-maximize/>
+        <button-fullscreen/>
         <button-minimize-chat/>
         <div class="chatbot-profile">
             <img class="chatbot-img" :src="botProfile.imgUrl" :alt="botProfile.name">
@@ -12,13 +12,13 @@
 
 <script>
     import { mapState, mapMutations } from 'vuex';
-    import { DropdownMenu, ButtonMinimizeChat, ButtonMaximize} from '../../data';
+    import { DropdownMenu, ButtonMinimizeChat, ButtonFullscreen} from '../../data';
     
     export default {
         components: {
             DropdownMenu,
             ButtonMinimizeChat,
-            ButtonMaximize,
+            ButtonFullscreen,
         },
         computed: {
             ...mapState(['botProfile'])

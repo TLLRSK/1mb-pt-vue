@@ -7,6 +7,7 @@ export const store = createStore({
       isChatbotOpen: true,
       isCtoOpen: true,
       isChatWindowOpen: false,
+      isFullScreen: false,
       isProcessingMessage: false,
       botProfile: botProfileData,
       dropdownMenuOptions: dropdownMenuOptionsData,
@@ -39,6 +40,9 @@ export const store = createStore({
     },
     toggleChatbotWindow(state) {
       state.isChatWindowOpen = !state.isChatWindowOpen;
+    },
+    toggleFullscreen(state) {
+      state.isFullscreen = !state.isFullscreen;
     },
     sendMessage(state, message) {
       state.messagesLog.push(message);

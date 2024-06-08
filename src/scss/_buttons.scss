@@ -6,8 +6,8 @@
     align-items: center;
     justify-content: center;
 
-    &--maximize,
     &--minimize,
+    &--toggle-fullscreen,
     &--toggle-dropdown {
         width: 2.4rem;
         height: 2.4rem;
@@ -21,7 +21,7 @@
         }
     }
     
-    &--maximize { // Maximizing window style on _app.scss
+    &--toggle-fullscreen { // Maximizing window style on _app.scss
         display: none;
         @include mq-480 {
             display: block;
@@ -86,13 +86,17 @@
         padding: $p--s*.25 $p--s;
         margin: $margin--s 0;
         color: $black;
-        border: 1px solid $black;
+        
         border-radius: $rounded--m;
         opacity: .6;
+        border: 1px solid $gray--200;
+        -webkit-box-shadow: 0px 0px 2px 1px $gray--200;
+        -moz-box-shadow: 0px 0px 2px 1px $gray--200;
+        box-shadow: 0px 0px 2px 1px $gray--200;
         @include mq-480 {
             &:hover {
-                background-color: $black;
-                color: $white;
+                opacity: 1;
+                border: 1px solid $black;
             }
         }
     }

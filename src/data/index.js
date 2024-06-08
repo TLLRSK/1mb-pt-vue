@@ -55,7 +55,8 @@ export {default as IconClose} from '../components/icons/IconClose.vue';
 export {default as IconMenu} from '../components/icons/IconMenu.vue';
 export {default as IconMinimize} from '../components/icons/IconMinimize.vue';
 export {default as IconSend} from '../components/icons/IconSend.vue';
-export {default as IconMaximize} from '../components/icons/IconMaximize.vue';
+export {default as IconFullscreen} from '../components/icons/IconFullscreen.vue';
+export {default as IconFullscreenOff} from '../components/icons/IconFullscreenOff.vue';
 
 // Buttons
 export {default as ButtonCloseCto} from '../components/buttons/ButtonCloseCto.vue';
@@ -65,7 +66,7 @@ export {default as ButtonToggleDropdown} from '../components/buttons/ButtonToggl
 export {default as ButtonDropdownMenuItem} from '../components/buttons/ButtonDropdownMenuItem.vue';
 export {default as ButtonSendMessage} from '../components/buttons/ButtonSendMessage.vue';
 export {default as ButtonShowChat} from '../components/buttons/ButtonShowChat.vue';
-export {default as ButtonMaximize} from '../components/buttons/ButtonMaximize.vue';
+export {default as ButtonFullscreen} from '../components/buttons/ButtonFullscreen.vue';
 export {default as ButtonChatOption} from '../components/buttons/ButtonChatOption.vue';
 
 // Messages
