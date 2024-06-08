@@ -11,34 +11,36 @@
           :content="message.content"
         />
       </template>
+      <message-writing v-if="isProcessingMessage"/>
     </ul>
   </template>
   
   <script>
   import { mapState } from 'vuex';
-  import { MessageDefault, MessageImageCard } from '../../data';
+  import { MessageWriting, MessageDefault, MessageImageCard } from '../../data';
 
   
   export default {
     components: {
+      MessageWriting,
       MessageDefault,
       MessageImageCard,
     },
     computed: {
-      ...mapState(['messagesLog']),
+      ...mapState(['messagesLog', 'isProcessingMessage']),
     },
     updated() {
       this.scrollToBottom();
     },
     methods: {
-    scrollToBottom() {
-      const messagesContainer = this.$refs.messagesContainer;
-      setTimeout(() => {
-        if (messagesContainer) {
-          messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
-      }, 10);
-    },
+      scrollToBottom() {
+        const messagesContainer = this.$refs.messagesContainer;
+        setTimeout(() => {
+          if (messagesContainer) {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+          }
+        }, 10);
+      },
   },
   };
   </script>

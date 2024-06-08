@@ -5,9 +5,9 @@ export const store = createStore({
   state() {
     return {
       isChatbotOpen: true,
-      isFirstVisit: true,
       isCtoOpen: true,
       isChatWindowOpen: false,
+      isProcessingMessage: false,
       botProfile: botProfileData,
       dropdownMenuOptions: dropdownMenuOptionsData,
       messagesLog: [
@@ -32,10 +32,6 @@ export const store = createStore({
     };
   },
   mutations: {
-    setIsFirstVisit(state, value) {
-      console.log("is first visit?")
-      state.isFirstVisit = value;
-    },
     closeCto(state) {
       state.isCtoOpen = false;
     },
@@ -47,7 +43,12 @@ export const store = createStore({
     },
     sendMessage(state) {
       const message = state.currentMessage;
-      state.messagesLog.push({ author: message.author, content: message.content, type: message.type });
+      const formatedMessage = { 
+        author: message.author,
+        content: message.content,
+        type: message.type
+      }
+      state.messagesLog.push(formatedMessage);
       state.currentMessage.content = '';
     },
     sendResponse(state) {
@@ -76,6 +77,17 @@ export const store = createStore({
       setTimeout(() => {
         commit('sendResponse');
       }, 2000);
+    },
+    processUserMessage({commit, state}, message) {
+      commit('sendMessage');
+      console.log("processing message")
+      setTimeout(() => {
+        state.isProcessingMessage = true;
+      }, 500)
+      setTimeout(() => {
+        state.isProcessingMessage = false;
+        commit('sendResponse');
+      }, 3000)
     },
     showChatWindow({commit, state}) {
       if (state.isCtoOpen) {

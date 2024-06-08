@@ -1,5 +1,5 @@
 <template>
-    <button class="btn btn--send-message" @click.prevent="sendMessage" :disabled="isDisabled">
+    <button class="btn btn--send-message" @click.prevent="processUserMessage" :disabled="isDisabled">
         <icon-send/>
     </button>
 </template>
@@ -18,7 +18,7 @@
             }
         },
         methods: {
-            ...mapActions(['sendMessage']),
+            ...mapActions(['processUserMessage']),
         }
     }
 </script>

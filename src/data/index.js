@@ -15,14 +15,15 @@ export const chatOptionsList = [
     {text: "Qué es una IA"}
 ];
 export const botResponsesData = [
-    // {
-    //     type: "default",
-    //     content: "random response from chatbot"
-    // },
-    // {
-    //     type: "default",
-    //     content: "another random response"
-    // },
+    {
+        type: "default",
+        content: "random response from chatbot"
+    },
+    {
+        type: "default",
+        content: "another random response"
+    },
+    
     {
         type: "imageCard",
         content: [
@@ -68,6 +69,7 @@ export {default as ButtonMaximize} from '../components/buttons/ButtonMaximize.vu
 export {default as ButtonChatOption} from '../components/buttons/ButtonChatOption.vue';
 
 // Messages
+export {default as MessageWriting} from '../components/messages/MessageWriting.vue';
 export {default as MessageDefault} from '../components/messages/MessageDefault.vue';
 export {default as MessageImageCard} from '../components/messages/MessageImageCard.vue';
 
