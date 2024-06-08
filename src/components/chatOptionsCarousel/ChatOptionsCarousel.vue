@@ -9,10 +9,15 @@
 
 <script>
   import { mapState } from 'vuex';
-  import {ButtonChatOption} from '../../data';
+  import {ButtonChatOption, chatOptionsList} from '../../data';
   export default {
     components: {
       ButtonChatOption,
+    },
+    data() {
+      return {
+        chatOptionsList: chatOptionsList,
+      }
     },
     computed: {
       ...mapState(['chatOptionsList']),
