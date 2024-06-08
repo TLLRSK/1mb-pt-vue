@@ -1,16 +1,17 @@
-.dropdown-menu {
+.dropdown-menu-container {
     margin-left: auto;
     z-index: 3;
-    
-    .list {
+    .dropdown-menu {
         display: none;
+        flex-direction: column;
         position: absolute;
         top: 100%;
         right: 0;
         background-color: white;
     }
-    .list.open {
-        display: flex;
-        flex-direction: column;
+    &:has(input[class='dropdown-toggler']:checked) {
+        .dropdown-menu {
+            display: flex;
+        }
     }
 }

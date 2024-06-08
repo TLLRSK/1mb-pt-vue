@@ -1,8 +1,9 @@
 <template>
-    <div class="dropdown-menu">
-       <button-toggle-dropdown/> 
-        <ul :class="['list', {'open': isDropdownMenuOpen}]">
-            <li class="list-item" v-for="option in dropdownMenuOptions" :key="option">
+    <div class="dropdown-menu-container">
+       <button-toggle-dropdown @togglingMenu="toggleMenu"/> 
+
+        <ul class="dropdown-menu"@mouseleave="closeMenu" ref="dropdownMenu">
+            <li class="dropdown-menu-item" v-for="option in dropdownMenuOptions" :key="option">
                 <button-menu-item :option="option"></button-menu-item>
             </li>
         </ul>
@@ -10,7 +11,7 @@
 </template>
 
 <script>
-    import {mapState, mapMutations} from 'vuex';
+    import {mapState} from 'vuex';
     import { ButtonToggleDropdown, ButtonMenuItem } from '../../data';
     
     export default {
@@ -18,11 +19,35 @@
             ButtonToggleDropdown,
             ButtonMenuItem,
         },
+        data()  {
+            return {
+                dropdownMenuToggler: null,
+            }
+        },
         computed: {
-            ...mapState(['isDropdownMenuOpen', 'dropdownMenuOptions']),
+            ...mapState(['dropdownMenuOptions']),
         },
         methods: {
-            ...mapMutations(['toggleDropdownMenu']),
-        }
+            openMenu() {
+                this.dropdownMenuToggler.checked = true;
+                setTimeout(() => {
+                    document.addEventListener('click', this.onClick)
+                }, 100) 
+            },
+            closeMenu() {
+                this.dropdownMenuToggler.checked = false;
+                document.removeEventListener('click', this.onClick)
+            },
+            onClick(e) {
+                const target = e.target;
+                if (!this.$refs.dropdownMenu.contains(target)) {this.closeMenu()} ;
+            },
+            toggleMenu(checked) {
+                checked ? this.closeMenu() : this.openMenu()
+            },
+        },
+        mounted() {
+            this.dropdownMenuToggler = document.querySelector('.dropdown-toggler');
+        },
     }
 </script>

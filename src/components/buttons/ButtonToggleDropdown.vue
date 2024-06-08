@@ -1,17 +1,20 @@
 <template>
-    <button class="btn btn--dropdown-menu" @click="toggleDropdownMenu">
+    <label for="dropdown-toggler" class="btn btn--toggle-dropdown" @click="togglingMenu">
+        <input type="checkbox" id="dropdown-toggler" class="dropdown-toggler" ref="dropdownToggler">
         <icon-menu/>
-    </button>
+    </label>
 </template>
 <script>
-import { mapMutations } from 'vuex';
     import IconMenu from '../icons/IconMenu.vue';
     export default {
         components: {
             IconMenu,
         },
         methods: {
-            ...mapMutations(['toggleDropdownMenu']),
+            togglingMenu() {
+                const toggler = this.$refs.dropdownToggler;
+                this.$emit('togglingMenu', toggler.checked)
+            }
         }
     }
 </script>

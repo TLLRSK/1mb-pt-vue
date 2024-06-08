@@ -8,7 +8,7 @@
 
     &--maximize,
     &--minimize,
-    &--dropdown-menu {
+    &--toggle-dropdown {
         width: 2.4rem;
         height: 2.4rem;
         border-radius: 50%;
@@ -20,15 +20,17 @@
             }
         }
     }
-    &--maximize {
+    
+    &--maximize { // Maximizing window style on _app.scss
         display: none;
-        .maximize-toggler {
-            appearance: none;
-            position: absolute;
-        }
         @include mq-480 {
             display: block;
         }
+    }
+    &--maximize .maximize-toggler,
+    &--toggle-dropdown .dropdown-toggler {
+            appearance: none;
+            position: absolute;
     }
     &--menu-item {
         padding: $p--s;

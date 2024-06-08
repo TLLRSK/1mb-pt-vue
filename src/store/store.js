@@ -8,7 +8,6 @@ export const store = createStore({
       isFirstVisit: true,
       isCtoOpen: true,
       isChatWindowOpen: false,
-      isDropdownMenuOpen: false,
       botProfile: botProfileData,
       dropdownMenuOptions: dropdownMenuOptionsData,
       messagesLog: [
@@ -45,9 +44,6 @@ export const store = createStore({
     },
     toggleChatbotWindow(state) {
       state.isChatWindowOpen = !state.isChatWindowOpen;
-    },
-    toggleDropdownMenu(state) {
-      state.isDropdownMenuOpen = !state.isDropdownMenuOpen;
     },
     sendMessage(state) {
       const message = state.currentMessage;
@@ -86,6 +82,6 @@ export const store = createStore({
         commit('closeCto');
       }
       commit('toggleChatbotWindow')
-    }  
+    },
   },
 });
