@@ -22,7 +22,7 @@ export const store = createStore({
           content: "Ya seas particular, empresa o institución, cuéntame tus intereses o necesidades. Así, podré ayudarte mejor. 🌐"
         },
       ],
-      currentMessage: {
+      currentUserMessage: {
         content: '',
         author: 'user',
         type: 'default',
@@ -41,54 +41,51 @@ export const store = createStore({
     toggleChatbotWindow(state) {
       state.isChatWindowOpen = !state.isChatWindowOpen;
     },
-    sendMessage(state) {
-      const message = state.currentMessage;
-      const formatedMessage = { 
-        author: message.author,
-        content: message.content,
-        type: message.type
-      }
-      state.messagesLog.push(formatedMessage);
-      state.currentMessage.content = '';
+    sendMessage(state, message) {
+      state.messagesLog.push(message);
+      state.currentUserMessage.content = '';
     },
-    sendResponse(state) {
-      const randomIndex = Math.floor(Math.random() * state.botResponses.length);
-      const selectedResponse = state.botResponses[randomIndex];
-      let formattedResponse = {
-        author: "chatbot",
-        type: selectedResponse.type,
-        content: selectedResponse.content
-      };
-
-      state.messagesLog.push(formattedResponse);
+    setIsProcessing(state, isProcessing) {
+      state.isProcessingMessage = isProcessing;
+    },
+    sendResponse(state, response) {
+      state.isProcessingMessage = false;
+      state.messagesLog.push(response);
     },
   },
   actions: {
-    sendMessage({ commit }) {
-      commit('sendMessage');
-      setTimeout(() => {
-        console.log("responding")
-        commit('sendResponse');
-      }, 2000);
+    async processResponse({commit, state}) {
+      commit('setIsProcessing', true);
+
+      const getResponse = () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            const randomIndex = Math.floor(Math.random() * state.botResponses.length);
+            const selectedResponse = state.botResponses[randomIndex];
+            let formattedResponse = {
+              author: "chatbot",
+              type: selectedResponse.type,
+              content: selectedResponse.content
+            };
+            resolve(formattedResponse);
+          }, 3000);
+        });
+      }
+
+      const response = await getResponse();
+
+      commit('sendResponse', response);
     },
-    sendOption({state, commit}, option) {
-      state.currentMessage = {...state.currentMessage, content: option.text};
-      commit('sendMessage');
-      setTimeout(() => {
-        commit('sendResponse');
-      }, 2000);
+    processUserMessage({ dispatch, commit }, message) {
+      const formattedMessage = { 
+        author: "user",
+        content: message.content,
+        type: "default",
+      };
+      commit('sendMessage', formattedMessage);
+      dispatch('processResponse');
     },
-    processUserMessage({commit, state}, message) {
-      commit('sendMessage');
-      console.log("processing message")
-      setTimeout(() => {
-        state.isProcessingMessage = true;
-      }, 500)
-      setTimeout(() => {
-        state.isProcessingMessage = false;
-        commit('sendResponse');
-      }, 3000)
-    },
+    
     showChatWindow({commit, state}) {
       if (state.isCtoOpen) {
         commit('closeCto');

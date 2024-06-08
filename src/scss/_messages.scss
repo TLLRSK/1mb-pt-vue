@@ -1,5 +1,6 @@
 [class*="message--"] {
   border-radius: $rounded--m;
+  width: fit-content;
   max-width: 66%;
   background-color: $white;
   padding: $p--m;

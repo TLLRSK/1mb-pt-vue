@@ -1,6 +1,6 @@
 <template>
-  <button class="btn btn--chat-option" @click="handleClick">
-    {{ option.text }}
+  <button class="btn btn--chat-option" @click="sendOption">
+    {{ option.content }}
   </button>
 </template>
 
@@ -15,9 +15,9 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['sendOption']),
-    handleClick() {
-      this.sendOption(this.option);
+    ...mapActions(['processUserMessage']),
+    sendOption() {
+      this.processUserMessage(this.option);
     }
   }
 }

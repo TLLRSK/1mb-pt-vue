@@ -9,10 +9,10 @@ export const dropdownMenuOptionsData = [
     {text: "Access the privacy policy"}
 ];
 export const chatOptionsList = [
-    {text: "Qué es un chatbot"},
-    {text: "Para qué sirve"},
-    {text: "Qué es 1millionbot"},
-    {text: "Qué es una IA"}
+    {content: "Qué es un chatbot"},
+    {content: "Para qué sirve"},
+    {content: "Qué es 1millionbot"},
+    {content: "Qué es una IA"}
 ];
 export const botResponsesData = [
     {

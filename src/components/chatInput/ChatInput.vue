@@ -1,6 +1,6 @@
 <template>
     <form class="form">
-        <input class="input" type="text" placeholder="Escribe tu pregunta" v-model="currentMessage.content">
+        <input class="input" type="text" placeholder="Escribe tu pregunta" v-model="currentUserMessage.content">
         <button-send-message/>
     </form>
 </template>
@@ -15,7 +15,7 @@
             ButtonSendMessage,
         },
         computed: {
-            ...mapState(['currentMessage']),
+            ...mapState(['currentUserMessage']),
         },
     }
 </script>

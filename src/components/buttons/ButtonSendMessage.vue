@@ -1,5 +1,5 @@
 <template>
-    <button class="btn btn--send-message" @click.prevent="processUserMessage" :disabled="isDisabled">
+    <button class="btn btn--send-message" @click.prevent="submitMessage" :disabled="isDisabled">
         <icon-send/>
     </button>
 </template>
@@ -12,13 +12,16 @@
             IconSend,
         },
         computed: {
-            ...mapState(['currentMessage']),
+            ...mapState(['currentUserMessage']),
             isDisabled() {
-                return this.currentMessage.content.length <= 0;
+                return this.currentUserMessage.content.length <= 0;
             }
         },
         methods: {
             ...mapActions(['processUserMessage']),
+            submitMessage() {
+                this.processUserMessage(this.currentUserMessage);
+            }
         }
     }
 </script>
