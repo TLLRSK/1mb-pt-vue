@@ -69,10 +69,17 @@
         position: absolute;
         top: -$margin--m;
         right: 0;
-        background-color: $white;
+        background-color: $main;
+        border-radius: 50%;
+        path {
+            fill: $white;
+        }
     }
     &--close-cto {
         border-radius: 50%;
+        path {
+            fill: $black;
+        }
         &:hover { 
             background-color: $black;
             path {
