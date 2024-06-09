@@ -1,6 +1,6 @@
 <template>
   <swiper-container ref="imageCardContainer"
-    class="swiper-container message--image-card"
+    class="swiper-container message message--image-card"
     style="
       --swiper-theme-color: oklch(69.71% 0.227 28.59);
       z-index: 0;
