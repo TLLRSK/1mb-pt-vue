@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
+    "pretty": "prettier --write \"./**/*.{js,jsx,vue,mjs,cjs,ts,tsx,json}\""
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",

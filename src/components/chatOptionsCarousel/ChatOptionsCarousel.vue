@@ -1,29 +1,32 @@
 <template>
-    <swiper-container ref="ChatOptionsContainer" class="chat-questions-carousel"
+  <swiper-container ref="ChatOptionsContainer" class="chat-questions-carousel">
+    <swiper-slide
+      class="option"
+      v-for="(option, index) in chatOptionsList"
+      :key="index"
     >
-      <swiper-slide class="option" v-for="(option, index) in chatOptionsList" :key="index">
-        <button-chat-option :option="option"></button-chat-option>
-      </swiper-slide>
-    </swiper-container>
+      <button-chat-option :option="option"></button-chat-option>
+    </swiper-slide>
+  </swiper-container>
 </template>
 
 <script>
-  import {ButtonChatOption, chatOptionsList} from '../../data';
-  export default {
-    components: {
-      ButtonChatOption,
-    },
-    data() {
-      return {
-        chatOptionsList: chatOptionsList,
-      }
-    },
-    mounted() {
-      // Overriding swiper shadow-root stylesheet
-      const swiperEl = this.$refs.ChatOptionsContainer;
-      const swiperShadowRoot = swiperEl.shadowRoot;
-      const style = document.createElement('style');
-      style.textContent = `
+import { ButtonChatOption, chatOptionsList } from "../../data";
+export default {
+  components: {
+    ButtonChatOption,
+  },
+  data() {
+    return {
+      chatOptionsList: chatOptionsList,
+    };
+  },
+  mounted() {
+    // Overriding swiper shadow-root stylesheet
+    const swiperEl = this.$refs.ChatOptionsContainer;
+    const swiperShadowRoot = swiperEl.shadowRoot;
+    const style = document.createElement("style");
+    style.textContent = `
   
         .swiper-button-prev, .swiper-button-next {
           width: 4rem !important;
@@ -66,18 +69,18 @@
         
       `;
 
-      swiperShadowRoot.appendChild(style);
-      
-      const swiperParams = {
-        slidesPerView: 'auto',
-        spaceBetween: '16',
-        navigation: {
-          enabled: true,
-        },
-      };
+    swiperShadowRoot.appendChild(style);
 
-      Object.assign(swiperEl, swiperParams);
-      swiperEl.initialize();
-    }
-  };
-  </script>
+    const swiperParams = {
+      slidesPerView: "auto",
+      spaceBetween: "16",
+      navigation: {
+        enabled: true,
+      },
+    };
+
+    Object.assign(swiperEl, swiperParams);
+    swiperEl.initialize();
+  },
+};
+</script>

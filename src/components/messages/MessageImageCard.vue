@@ -1,12 +1,11 @@
 <template>
-  <swiper-container ref="imageCardContainer"
+  <swiper-container
+    ref="imageCardContainer"
     class="swiper-container message message--image-card"
-    style="
-      --swiper-theme-color: oklch(69.71% 0.227 28.59);
-      z-index: 0;
-    "
+    style="--swiper-theme-color: oklch(69.71% 0.227 28.59); z-index: 0"
   >
-    <swiper-slide class="swiper-slide article"
+    <swiper-slide
+      class="swiper-slide article"
       v-for="(article, index) in content"
       :key="index"
     >
@@ -14,7 +13,6 @@
       <h3 class="title">{{ article.title }}</h3>
       <p class="content">{{ article.text }}</p>
       <a class="link" :href="article.articleUrl" target="_blank">Read more</a>
-
     </swiper-slide>
   </swiper-container>
 </template>
@@ -24,24 +22,23 @@ export default {
   props: {
     content: {
       type: Array,
-      required: true
+      required: true,
     },
   },
   mounted() {
     const swiperEl = this.$refs.imageCardContainer;
-    
+
     const swiperParams = {
       slidesPerView: 1,
-      spaceBetween: '16',
+      spaceBetween: "16",
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
       },
     };
 
     Object.assign(swiperEl, swiperParams);
     swiperEl.initialize();
-  }
-}
+  },
+};
 </script>
-

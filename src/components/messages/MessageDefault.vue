@@ -1,7 +1,15 @@
 <template>
-    <li :class="['message', {'message--user': author === 'user', 'message--chatbot': author === 'chatbot' }]">
-      <p>{{ content }}</p>
-    </li>
+  <li
+    :class="[
+      'message',
+      {
+        'message--user': author === 'user',
+        'message--chatbot': author === 'chatbot',
+      },
+    ]"
+  >
+    <p>{{ content }}</p>
+  </li>
 </template>
 
 <script>

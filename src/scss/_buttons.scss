@@ -41,17 +41,17 @@
         }
     }
     &--send-message {
-        padding: $p--s $p--m;
+        width: 4.8rem;
+        padding: $p--s $p--s;
         border-radius: $round;
-        transition: padding .2s ease-in-out, background-color .1s ease-in-out;
+        transition: padding .2s ease-in-out, background-color .2s ease-in-out;
         path {
             fill: $main;
         }
         &[disabled]{
             cursor: default;
-            background-color: $white;
             path {
-                fill: $gray--200;
+                fill: $gray--100;
             }
         }
         &:not([disabled]) {

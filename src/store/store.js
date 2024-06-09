@@ -10,7 +10,7 @@ export const store = createStore({
     return {
       isFirstVisit: !sessionStorage.getItem("visited"),
       isChatbotOpen: true,
-      chatbotWindowStatus: 'minimized',
+      chatbotWindowStatus: "minimized",
       isCtoOpen: true,
       isFullScreen: false,
       isProcessingMessage: false,
@@ -46,23 +46,23 @@ export const store = createStore({
     },
     toggleChatbotWindowStatus(state) {
       const currentStatus = state.chatbotWindowStatus;
-      switch(currentStatus) {
+      switch (currentStatus) {
         case "minimized":
           state.chatbotWindowStatus = "toShowing";
-          console.log("toShowing")
+          console.log("toShowing");
           setTimeout(() => {
             state.chatbotWindowStatus = "showing";
-            console.log("showing")
-          }, 100)
+            console.log("showing");
+          }, 100);
           break;
 
         case "showing":
           state.chatbotWindowStatus = "toMinimized";
-          console.log("toMinimized")
+          console.log("toMinimized");
           setTimeout(() => {
             state.chatbotWindowStatus = "minimized";
-            console.log("minimized")
-          }, 400)
+            console.log("minimized");
+          }, 400);
           break;
 
         default:

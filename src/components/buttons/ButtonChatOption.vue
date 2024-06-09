@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from "vuex";
 
 export default {
   props: {
@@ -15,10 +15,10 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['processUserMessage']),
+    ...mapActions(["processUserMessage"]),
     sendOption() {
       this.processUserMessage(this.option);
-    }
-  }
-}
+    },
+  },
+};
 </script>

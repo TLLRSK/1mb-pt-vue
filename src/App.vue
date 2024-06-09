@@ -1,17 +1,26 @@
 <template>
   <section
     :class="[
-    'chatbot',
-      {'minimized': chatbotWindowStatus == 'minimized' || chatbotWindowStatus == 'toShowing'},
-      {'showing': chatbotWindowStatus == 'showing' || chatbotWindowStatus == 'toMinimized'},
-      { fullscreen: isFullscreen }
+      'chatbot',
+      {
+        minimized:
+          chatbotWindowStatus == 'minimized' ||
+          chatbotWindowStatus == 'toShowing',
+      },
+      {
+        showing:
+          chatbotWindowStatus == 'showing' ||
+          chatbotWindowStatus == 'toMinimized',
+      },
+      { fullscreen: isFullscreen },
     ]"
     v-if="isChatbotOpen"
   >
-    <div class="chatbot-container--minimized"
+    <div
+      class="chatbot-container--minimized"
       :class="[
-      {'toShowing': chatbotWindowStatus == 'toShowing'},
-      {'toMinimized': chatbotWindowStatus == 'toMinimized'}
+        { toShowing: chatbotWindowStatus == 'toShowing' },
+        { toMinimized: chatbotWindowStatus == 'toMinimized' },
       ]"
     >
       <cto />
@@ -19,17 +28,18 @@
       <button-close-chat />
     </div>
 
-    <div class="chatbot-container--showing"
-    :class="[
-    {'toMinimized': chatbotWindowStatus == 'toMinimized'},
-    {'toShowing': chatbotWindowStatus == 'toShowing'}
-    ]"
+    <div
+      class="chatbot-container--showing"
+      :class="[
+        { toMinimized: chatbotWindowStatus == 'toMinimized' },
+        { toShowing: chatbotWindowStatus == 'toShowing' },
+      ]"
     >
       <Top-bar />
       <chat />
       <chat-options-carousel />
       <chat-input />
-      <chat-footer></chat-footer>
+      <chat-footer />
     </div>
   </section>
 </template>

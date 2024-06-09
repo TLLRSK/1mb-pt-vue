@@ -6,9 +6,9 @@
   padding: $p--s $p--m;
   transition: max-width .2s ease-in-out;
   animation: showingMessage .8s;
-}
 
-.app-chatbot.fullscreen {
+}
+.chatbot.fullscreen {
   .message {
     @include mq-720 {
         max-width: 40rem;
