@@ -76,10 +76,13 @@
         position: absolute;
         top: -$margin--m*2;
         right: 0;
-        background-color: $main;
+        background-color: $gray--200;
         border-radius: 50%;
         path {
             fill: $white;
+        }
+        &:hover {
+            background-color: $main;
         }
     }
     &--close-cto {
@@ -100,7 +103,6 @@
         padding: $p--s*.25 $p--s;
         margin: $margin--s 0;
         color: $black;
-        
         border-radius: $rounded--m;
         opacity: .6;
         border: 1px solid $gray--200;
