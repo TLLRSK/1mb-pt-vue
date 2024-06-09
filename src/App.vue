@@ -8,7 +8,7 @@
   >
     <div
       :class="[
-        'chatbot-container--' + (isChatbotMinimized ? 'minimized' : 'hidden'),
+        (isChatbotMinimized ? 'chatbot-container--minimized' : 'chatbot-container--hidden')
       ]"
     >
       <cto />
@@ -18,7 +18,7 @@
 
     <div
       :class="[
-        'chatbot-container--' + (isChatbotMinimized ? 'hidden' : 'default'),
+        (isChatbotMinimized ? 'chatbot-container--hidden' : 'chatbot-container--default')
       ]"
     >
       <Top-bar />

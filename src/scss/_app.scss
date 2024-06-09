@@ -1,8 +1,4 @@
 @import './mixins';
-#app {
-    width: 100dvw;
-    height: 100dvh;
-}
 .app-chatbot {
     height: 100%;
     display: flex;
@@ -40,6 +36,7 @@
     bottom: $margin--m;
     right: $margin--m;
     opacity: .9;
+    animation: fadeIn 3s;
     &:hover {
         opacity: 1;
     }

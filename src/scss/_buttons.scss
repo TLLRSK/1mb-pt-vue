@@ -20,8 +20,7 @@
             }
         }
     }
-    
-    &--toggle-fullscreen { // Maximizing window style on _app.scss
+    &--toggle-fullscreen {
         display: none;
         @include mq-480 {
             display: block;
