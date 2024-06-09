@@ -39,7 +39,7 @@
           if (messagesContainer) {
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
           }
-        }, 10);
+        }, 200);
       },
   },
   };
