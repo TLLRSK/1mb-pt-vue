@@ -2,7 +2,6 @@ export const botProfileData = {
     imgUrl: "../../public/images/chabot-pfp.gif",
     name: "Millie"
 };
-
 export const dropdownMenuOptionsData = [
     {text: "Forget user data"},
     {text: "Change language"},

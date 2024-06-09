@@ -58,9 +58,11 @@ export const store = createStore({
   },
   actions: {
     async processResponse({commit, state}) {
+
       setTimeout(() => {
         commit('setIsProcessing', true);
       }, 750)
+
       const getResponse = () => {
         return new Promise((resolve) => {
           setTimeout(() => {
@@ -80,6 +82,7 @@ export const store = createStore({
 
       commit('sendResponse', response);
     },
+    
     processUserMessage({ dispatch, commit }, message) {
       const formattedMessage = { 
         author: "user",

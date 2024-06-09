@@ -13,6 +13,10 @@ export default defineConfig({
           ].includes(tag),
         }
       }
-    })
-  ]
+    }),
+  ],
+  test:{
+    globals:true,
+    environment: 'happy-dom',
+  }
 })
