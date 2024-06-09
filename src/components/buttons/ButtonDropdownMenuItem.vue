@@ -13,7 +13,6 @@ export default {
   },
   methods: {
     selectOption() {
-      console.log("selected menu option: ", this.option.text);
       this.$emit("closeMenu");
     },
   },

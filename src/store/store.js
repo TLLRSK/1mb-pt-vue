@@ -49,19 +49,15 @@ export const store = createStore({
       switch (currentStatus) {
         case "minimized":
           state.chatbotWindowStatus = "toShowing";
-          console.log("toShowing");
           setTimeout(() => {
             state.chatbotWindowStatus = "showing";
-            console.log("showing");
           }, 100);
           break;
 
         case "showing":
           state.chatbotWindowStatus = "toMinimized";
-          console.log("toMinimized");
           setTimeout(() => {
             state.chatbotWindowStatus = "minimized";
-            console.log("minimized");
           }, 400);
           break;
 

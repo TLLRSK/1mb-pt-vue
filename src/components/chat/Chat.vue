@@ -27,7 +27,7 @@ export default {
   },
   watch: {
     chatbotWindowStatus(newStatus) {
-      if (newStatus == 'showing') {
+      if (newStatus == "showing") {
         this.scrollToBottom();
       }
     },
