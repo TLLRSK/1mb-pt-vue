@@ -1,28 +1,28 @@
-import { mount } from '@vue/test-utils';
-import Chat from '../chat/Chat.vue';
-import { store } from '../../store/store.js';
+import { mount } from "@vue/test-utils";
+import Chat from "../chat/Chat.vue";
+import { store } from "../../store/store.js";
 
-describe('Chat', () => {
-    it('renders properly', () => {
-        const wrapper = mount(Chat, {
-            global: {
-                plugins: [store],
-            },
-        });
-
-        expect(wrapper.find('.chat').exists()).toBe(true);
+describe("Chat", () => {
+  it("renders properly", () => {
+    const wrapper = mount(Chat, {
+      global: {
+        plugins: [store],
+      },
     });
 
-    it('renders all messages in messagesLog', () => {
-        const wrapper = mount(Chat, {
-            global: {
-                plugins: [store],
-            },
-        });
+    expect(wrapper.find(".chat").exists()).toBe(true);
+  });
 
-        const allMessages = wrapper.findAll('.message');
-        const messagesLog = store.state.messagesLog;
-
-        expect(allMessages.length).toBe(messagesLog.length);
+  it("renders all messages in messagesLog", () => {
+    const wrapper = mount(Chat, {
+      global: {
+        plugins: [store],
+      },
     });
+
+    const allMessages = wrapper.findAll(".message");
+    const messagesLog = store.state.messagesLog;
+
+    expect(allMessages.length).toBe(messagesLog.length);
+  });
 });

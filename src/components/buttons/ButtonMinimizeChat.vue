@@ -1,17 +1,17 @@
 <template>
-    <button class="btn btn--minimize" @click="toggleChatbotWindow">
-        <icon-minimize/>
-    </button>
+  <button class="btn btn--minimize" @click="toggleMinimized">
+    <icon-minimize />
+  </button>
 </template>
 <script>
-    import { mapMutations } from 'vuex';
-    import IconMinimize from '../icons/IconMinimize.vue';
-    export default {
-        components: {
-            IconMinimize,
-        },
-        methods: {
-            ...mapMutations(['toggleChatbotWindow']),
-        }
-    }
+import { mapMutations } from "vuex";
+import IconMinimize from "../icons/IconMinimize.vue";
+export default {
+  components: {
+    IconMinimize,
+  },
+  methods: {
+    ...mapMutations(["toggleMinimized"]),
+  },
+};
 </script>

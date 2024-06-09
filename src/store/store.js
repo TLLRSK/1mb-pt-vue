@@ -1,13 +1,17 @@
-import { createStore } from 'vuex';
-import { botProfileData, dropdownMenuOptionsData, botResponsesData } from '../data';
+import { createStore } from "vuex";
+import {
+  botProfileData,
+  dropdownMenuOptionsData,
+  botResponsesData,
+} from "../data";
 
 export const store = createStore({
   state() {
     return {
-      isFirstVisit: !sessionStorage.getItem('visited'),
+      isFirstVisit: !sessionStorage.getItem("visited"),
       isChatbotOpen: true,
+      isChatbotMinimized: true,
       isCtoOpen: true,
-      isChatWindowOpen: false,
       isFullScreen: false,
       isProcessingMessage: false,
       botProfile: botProfileData,
@@ -16,18 +20,19 @@ export const store = createStore({
         {
           author: "chatbot",
           type: "default",
-          content: "¡Hola! Soy Millie de 1MillionBot 🙋🏽‍♀️"
+          content: "¡Hola! Soy Millie de 1MillionBot 🙋🏽‍♀️",
         },
         {
           author: "chatbot",
           type: "default",
-          content: "Ya seas particular, empresa o institución, cuéntame tus intereses o necesidades. Así, podré ayudarte mejor. 🌐"
+          content:
+            "Ya seas particular, empresa o institución, cuéntame tus intereses o necesidades. Así, podré ayudarte mejor. 🌐",
         },
       ],
       currentUserMessage: {
-        content: '',
-        author: 'user',
-        type: 'default',
+        content: "",
+        author: "user",
+        type: "default",
       },
       botResponses: botResponsesData,
     };
@@ -39,15 +44,15 @@ export const store = createStore({
     closeChatbot(state) {
       state.isChatbotOpen = false;
     },
-    toggleChatbotWindow(state) {
-      state.isChatWindowOpen = !state.isChatWindowOpen;
+    toggleMinimized(state) {
+      state.isChatbotMinimized = !state.isChatbotMinimized;
     },
     toggleFullscreen(state) {
       state.isFullscreen = !state.isFullscreen;
     },
     sendMessage(state, message) {
       state.messagesLog.push(message);
-      state.currentUserMessage.content = '';
+      state.currentUserMessage.content = "";
     },
     setIsProcessing(state, isProcessing) {
       state.isProcessingMessage = isProcessing;
@@ -61,54 +66,55 @@ export const store = createStore({
     },
   },
   actions: {
-    async processResponse({commit, state}) {
-
+    async processResponse({ commit, state }) {
       setTimeout(() => {
-        commit('setIsProcessing', true);
-      }, 750)
+        commit("setIsProcessing", true);
+      }, 750);
 
       const getResponse = () => {
         return new Promise((resolve) => {
           setTimeout(() => {
-            const randomIndex = Math.floor(Math.random() * state.botResponses.length);
+            const randomIndex = Math.floor(
+              Math.random() * state.botResponses.length,
+            );
             const selectedResponse = state.botResponses[randomIndex];
             let formattedResponse = {
               author: "chatbot",
               type: selectedResponse.type,
-              content: selectedResponse.content
+              content: selectedResponse.content,
             };
             resolve(formattedResponse);
           }, 3000);
         });
-      }
+      };
 
       const response = await getResponse();
 
-      commit('sendResponse', response);
+      commit("sendResponse", response);
     },
-    
+
     processUserMessage({ dispatch, commit }, message) {
-      const formattedMessage = { 
+      const formattedMessage = {
         author: "user",
         content: message.content,
         type: "default",
       };
-      commit('sendMessage', formattedMessage);
-      dispatch('processResponse');
+      commit("sendMessage", formattedMessage);
+      dispatch("processResponse");
     },
-    
-    showChatWindow({commit, state}) {
+
+    showChatWindow({ commit, state }) {
       if (state.isCtoOpen) {
-        commit('closeCto');
+        commit("closeCto");
       }
-      commit('toggleChatbotWindow')
+      commit("toggleMinimized");
     },
     checkFirstVisit({ state }) {
-      console.log("checking first visit: ", state.isFirstVisit)
+      console.log("checking first visit: ", state.isFirstVisit);
       if (state.isFirstVisit) {
-        sessionStorage.setItem('visited', 'true');
+        sessionStorage.setItem("visited", "true");
       }
-      console.log("current isFirstVisit: ", state.isFirstVisit)
+      console.log("current isFirstVisit: ", state.isFirstVisit);
     },
   },
 });

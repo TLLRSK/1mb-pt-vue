@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import { fileURLToPath, URL } from "url"
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import { fileURLToPath, URL } from "url";
+import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,16 +8,14 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
-          isCustomElement: (tag) => [
-            'swiper-slide',
-            'swiper-container'
-          ].includes(tag),
-        }
-      }
+          isCustomElement: (tag) =>
+            ["swiper-slide", "swiper-container"].includes(tag),
+        },
+      },
     }),
   ],
-  test:{
-    globals:true,
-    environment: 'happy-dom',
+  test: {
+    globals: true,
+    environment: "happy-dom",
   },
-})
+});
