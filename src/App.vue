@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import { mapState, mapMutations } from 'vuex';
+  import { mapState, mapMutations, mapActions } from 'vuex';
   import { ButtonCloseChat, ButtonShowChat, Chat, ChatFooter, ChatInput, ChatOptionsCarousel, Cto, TopBar } from './data';
 
   export default {
@@ -40,6 +40,10 @@
     },
     methods: {
       ...mapMutations(['toggleChatbotWindow', 'closeChatbot']),
+      ...mapActions(['checkFirstVisit'])
+    },
+    mounted() {
+      this.checkFirstVisit();
     }
   };
 </script>

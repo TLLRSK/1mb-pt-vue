@@ -4,6 +4,7 @@ import { botProfileData, dropdownMenuOptionsData, botResponsesData } from '../da
 export const store = createStore({
   state() {
     return {
+      isFirstVisit: !sessionStorage.getItem('visited'),
       isChatbotOpen: true,
       isCtoOpen: true,
       isChatWindowOpen: false,
@@ -55,6 +56,9 @@ export const store = createStore({
       state.isProcessingMessage = false;
       state.messagesLog.push(response);
     },
+    setFirstVisit(state, isFirstVisit) {
+      state.isFirstVisit = isFirstVisit;
+    },
   },
   actions: {
     async processResponse({commit, state}) {
@@ -98,6 +102,13 @@ export const store = createStore({
         commit('closeCto');
       }
       commit('toggleChatbotWindow')
+    },
+    checkFirstVisit({ state }) {
+      console.log("checking first visit: ", state.isFirstVisit)
+      if (state.isFirstVisit) {
+        sessionStorage.setItem('visited', 'true');
+      }
+      console.log("current isFirstVisit: ", state.isFirstVisit)
     },
   },
 });

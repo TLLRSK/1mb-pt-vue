@@ -1,5 +1,5 @@
 <template>
-    <button class="cto" v-if="isCtoOpen" @click="showChatWindow">
+    <button class="cto" v-if="isCtoOpen && isFirstVisit" @click="showChatWindow">
         <button-close-cto/>
         <p class="cto-message">¿En qué puedo ayudarte?</p>
     </button>

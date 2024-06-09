@@ -67,7 +67,7 @@
     }
     &--close-chatbot {
         position: absolute;
-        top: -$margin--m;
+        top: -$margin--m*2;
         right: 0;
         background-color: $main;
         border-radius: 50%;
