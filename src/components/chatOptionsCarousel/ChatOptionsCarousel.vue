@@ -35,6 +35,7 @@
           top: 0 !important;
           bottom: 0 !important;
           margin: 0 !important;
+          border-bottom: 1px solid oklch(77.89% 0 0);
           opacity: .9;
 
           svg {

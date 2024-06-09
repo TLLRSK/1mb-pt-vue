@@ -1,7 +1,7 @@
 .message {
   border-radius: $rounded--m;
   width: fit-content;
-  max-width: 66%;
+  max-width: 60%;
   background-color: $white;
   padding: $p--s $p--m;
   transition: max-width .2s ease-in-out;
@@ -38,27 +38,26 @@
 
   &--image-card {
     padding: $p--s;
-
+    cursor: grab;
     .article {
       display: flex;
       flex-direction: column;
       padding: $p--s;
       gap: $gap--s;
       margin: 0;
-      margin-bottom: $margin--s;
+      margin-bottom: $margin--l;
       border: 1px solid $gray;
-      &-img {
-        margin: $margin--s;
+
+      .title {
+        text-transform: uppercase;
       }
-      &-content {
-        padding: 0 $p--s;
-      }
-      &-link {
-        width: 100%;
-        border-top: 1px solid $gray;
-        padding: $p--s;
-        color: $black;
+      .link {
+        color: $gray--200;
         font-weight: 600;
+  
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
