@@ -1,0 +1,20 @@
+.form {
+    display: flex;
+    width: 100%;
+    position: relative;
+    min-height: 5rem;
+    padding: $p--s;
+    gap: $gap--s;
+    // border-top: 1px solid $gray--200;
+    // border-bottom: 1px solid $gray--200;
+    .input {
+        flex: 1;
+        border: none;
+        padding: $p--s;
+        background-color: $gray;
+        border-radius: $rounded--l;
+        &:focus {
+            outline: none;
+        }
+    }
+}

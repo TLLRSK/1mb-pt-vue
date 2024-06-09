@@ -43,17 +43,25 @@
     }
     &--send-message {
         padding: $p--s $p--m;
-        background-color: $main;
-        border-top-left-radius: $rounded--l;
+        border-radius: $round;
         transition: padding .2s ease-in-out, background-color .1s ease-in-out;
+        path {
+            fill: $main;
+        }
         &[disabled]{
             cursor: default;
-            background-color: $gray--200;
+            background-color: $white;
+            path {
+                fill: $gray--200;
+            }
         }
         &:not([disabled]) {
             @include mq-480 {
                 &:hover {
-                    padding-right: $p--s*2;
+                    background-color: $main;
+                    path {
+                        fill: $white;
+                    }
                 }
             }
         }

@@ -1,22 +1,23 @@
-[class*="message--"] {
+.message {
   border-radius: $rounded--m;
   width: fit-content;
   max-width: 66%;
   background-color: $white;
   padding: $p--s $p--m;
-  transition: max-width .6s ease-in-out;
+  transition: max-width .2s ease-in-out;
+  animation: showingMessage .3s;
 }
 
 .app-chatbot.fullscreen {
-  [class*="message--"] {
+  .message {
     @include mq-720 {
-        max-width: 50%;
+        max-width: 40rem;
     }
     @include mq-1024 {
-        max-width: 40%;
+        max-width: 52rem;
     }
     @include mq-1920 {
-        max-width: 33%;
+        max-width: 64rem;
     }
   }
 }
@@ -28,7 +29,6 @@
     color: $white;
     border-top-right-radius: 0;
     margin: $margin--m 0 $margin--m auto;
-    animation: showingMessage .3s;
   }
   
   &--chatbot {
