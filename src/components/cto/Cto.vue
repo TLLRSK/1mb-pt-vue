@@ -5,9 +5,8 @@
     </button>
 </template>
 <script>
-    import { mapState } from 'vuex';
     import {ButtonCloseCto} from '../../data'
-    import { mapActions } from 'vuex';
+    import { mapState, mapMutations, mapActions  } from 'vuex';
     export default {
         components: {
             ButtonCloseCto,
@@ -17,6 +16,12 @@
         },
         methods: {
             ...mapActions(['showChatWindow']),
+            ...mapMutations(['closeCto']),
         },
+        mounted() {
+            setTimeout(() => {
+                this.closeCto();
+            }, 12000)
+        }
     }
 </script>
