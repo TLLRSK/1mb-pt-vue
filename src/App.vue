@@ -1,14 +1,17 @@
 <template>
   <section
     :class="[
-      'app-chatbot',
-      { closed: !isChatbotOpen, fullscreen: isFullscreen },
+    'chatbot',
+      {'minimized': chatbotWindowStatus == 'minimized' || chatbotWindowStatus == 'toShowing'},
+      {'showing': chatbotWindowStatus == 'showing' || chatbotWindowStatus == 'toMinimized'},
+      { fullscreen: isFullscreen }
     ]"
     v-if="isChatbotOpen"
   >
-    <div
+    <div class="chatbot-container--minimized"
       :class="[
-        (isChatbotMinimized ? 'chatbot-container--minimized' : 'chatbot-container--hidden')
+      {'toShowing': chatbotWindowStatus == 'toShowing'},
+      {'toMinimized': chatbotWindowStatus == 'toMinimized'}
       ]"
     >
       <cto />
@@ -16,10 +19,11 @@
       <button-close-chat />
     </div>
 
-    <div
-      :class="[
-        (isChatbotMinimized ? 'chatbot-container--hidden' : 'chatbot-container--default')
-      ]"
+    <div class="chatbot-container--showing"
+    :class="[
+    {'toMinimized': chatbotWindowStatus == 'toMinimized'},
+    {'toShowing': chatbotWindowStatus == 'toShowing'}
+    ]"
     >
       <Top-bar />
       <chat />
@@ -55,10 +59,10 @@ export default {
     ChatFooter,
   },
   computed: {
-    ...mapState(["isChatbotOpen", "isChatbotMinimized", "isFullscreen"]),
+    ...mapState(["isChatbotOpen", "chatbotWindowStatus", "isFullscreen"]),
   },
   methods: {
-    ...mapMutations(["toggleMinimized", "closeChatbot"]),
+    ...mapMutations(["toggleChatbotWindowStatus"]),
     ...mapActions(["checkFirstVisit"]),
   },
   mounted() {

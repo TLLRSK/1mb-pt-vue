@@ -1,5 +1,5 @@
 @import './mixins';
-.app-chatbot {
+.chatbot {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -7,11 +7,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-
-    &.closed {
-        display: none;
-    }
-
     @include mq-480 {
         height: 66%;
         width: 48rem;
@@ -19,35 +14,63 @@
         transition: 
         width .4s ease-in-out,
         height .4s ease-in-out;
-
         &.fullscreen {
             height: 100%;
             width: 100%;
         }
     }
-}
-.chatbot-container--hidden {
-    display: none;
-}
-.chatbot-container--minimized {
-    width: 8rem;
-    height: 8rem;
-    position: fixed;
-    bottom: $margin--m;
-    right: $margin--m;
-    opacity: .9;
-    animation: fadeIn 3s;
-    &:hover {
-        opacity: 1;
+    &-container--minimized,
+    &-container--showing {
+        transition: opacity .3s ease-in-out, transform .3s ease-in-out;
     }
-}
-.chatbot-container--default {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    border-radius: $rounded--s;
-    overflow: hidden;
-    -webkit-box-shadow: 0px 4px 18px -2px $gray--200;
-    -moz-box-shadow: 0px 4px 18px -2px $gray--200;
-    box-shadow: 0px 4px 18px -2px $gray--200;
+
+    &-container--minimized {
+        width: 8rem;
+        height: 8rem;
+        position: fixed;
+        bottom: $margin--m;
+        right: $margin--m;
+    }
+
+    &-container--showing {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: $rounded--s;
+        overflow: hidden;
+        box-shadow: 0px 4px 18px -2px $gray--200;
+    }
+
+    &.showing {
+        .chatbot-container--minimized {
+            display: none;
+            opacity: 0;
+            &.toMinimized {
+                display: block;
+            }
+        }
+        .chatbot-container--showing {
+            opacity: 1;
+            &.toMinimized {
+                transform: translate(50%, 50%) scale(0.8);
+                opacity: 0;
+            }
+        }
+    }
+    &.minimized {
+        .chatbot-container--minimized {
+            opacity: .8;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        .chatbot-container--showing {
+            display: none;
+            opacity: 0;
+            transform: translate(50%, 50%) scale(0.8);
+            &.toShowing {
+                display: block;
+            }
+        }
+    }
 }

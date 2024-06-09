@@ -10,7 +10,7 @@ export const store = createStore({
     return {
       isFirstVisit: !sessionStorage.getItem("visited"),
       isChatbotOpen: true,
-      isChatbotMinimized: true,
+      chatbotWindowStatus: 'minimized',
       isCtoOpen: true,
       isFullScreen: false,
       isProcessingMessage: false,
@@ -44,8 +44,30 @@ export const store = createStore({
     closeChatbot(state) {
       state.isChatbotOpen = false;
     },
-    toggleMinimized(state) {
-      state.isChatbotMinimized = !state.isChatbotMinimized;
+    toggleChatbotWindowStatus(state) {
+      const currentStatus = state.chatbotWindowStatus;
+      switch(currentStatus) {
+        case "minimized":
+          state.chatbotWindowStatus = "toShowing";
+          console.log("toShowing")
+          setTimeout(() => {
+            state.chatbotWindowStatus = "showing";
+            console.log("showing")
+          }, 100)
+          break;
+
+        case "showing":
+          state.chatbotWindowStatus = "toMinimized";
+          console.log("toMinimized")
+          setTimeout(() => {
+            state.chatbotWindowStatus = "minimized";
+            console.log("minimized")
+          }, 400)
+          break;
+
+        default:
+          break;
+      }
     },
     toggleFullscreen(state) {
       state.isFullscreen = !state.isFullscreen;
@@ -110,11 +132,9 @@ export const store = createStore({
       commit("toggleMinimized");
     },
     checkFirstVisit({ state }) {
-      console.log("checking first visit: ", state.isFirstVisit);
       if (state.isFirstVisit) {
         sessionStorage.setItem("visited", "true");
       }
-      console.log("current isFirstVisit: ", state.isFirstVisit);
     },
   },
 });

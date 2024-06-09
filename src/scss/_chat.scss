@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: $p--l;
+    padding: $p--l $p--l $p--l*1.2 $p--l;
     gap: 1.6rem;
     background-color: $gray;
     overflow-y: scroll;

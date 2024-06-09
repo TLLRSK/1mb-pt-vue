@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn--minimize" @click="toggleMinimized">
+  <button class="btn btn--minimize" @click="toggleChatbotWindowStatus">
     <icon-minimize />
   </button>
 </template>
@@ -11,7 +11,7 @@ export default {
     IconMinimize,
   },
   methods: {
-    ...mapMutations(["toggleMinimized"]),
+    ...mapMutations(["toggleChatbotWindowStatus"]),
   },
 };
 </script>
