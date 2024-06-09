@@ -1,5 +1,5 @@
 export const botProfileData = {
-    imgUrl: "../../public/images/chabot-pfp.gif",
+    imgUrl: "images/chatbot-pfp.gif",
     name: "Millie"
 };
 export const dropdownMenuOptionsData = [
@@ -27,19 +27,19 @@ export const botResponsesData = [
         type: "imageCard",
         content: [
             {
-                imgUrl: "public/images/article-image.webp",
+                imgUrl: "images/article-image.webp",
                 title: "article title",
                 text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
                 articleUrl: "https://placehold.jp/150x150.png"
             },
             {
-                imgUrl: "public/images/article-image.webp",
+                imgUrl: "images/article-image.webp",
                 title: "article title",
                 text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
                 articleUrl: "https://placehold.jp/150x150.png"
             },
             {
-                imgUrl: "public/images/article-image.webp",
+                imgUrl: "images/article-image.webp",
                 title: "article title",
                 text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
                 articleUrl: "https://placehold.jp/150x150.png"
