@@ -1,6 +1,6 @@
 <template>
   <button class="btn btn--show-chatbot" @click="toggleChatbotWindowStatus">
-    <img :src="botProfile.imgUrl" alt="" />
+    <img :src="botProfile.imgUrl" :alt="botProfile.name" />
   </button>
 </template>
 

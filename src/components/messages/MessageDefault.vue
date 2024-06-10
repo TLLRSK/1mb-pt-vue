@@ -1,13 +1,5 @@
 <template>
-  <li
-    :class="[
-      'message',
-      {
-        'message--user': author === 'user',
-        'message--chatbot': author === 'chatbot',
-      },
-    ]"
-  >
+  <li class="message" :class="messageClasses">
     <p>{{ content }}</p>
   </li>
 </template>
@@ -30,5 +22,15 @@ export default {
       content: this.messageContent,
     };
   },
+  computed: {
+    messageClasses() {
+      return [
+        {
+          'message--user': this.author === 'user',
+          'message--chatbot': this.author === 'chatbot',
+        },
+      ]
+    }
+  }
 };
 </script>

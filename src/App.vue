@@ -1,41 +1,13 @@
 <template>
-  <section
-    :class="[
-      'chatbot',
-      {
-        minimized:
-          chatbotWindowStatus == 'minimized' ||
-          chatbotWindowStatus == 'toShowing',
-      },
-      {
-        showing:
-          chatbotWindowStatus == 'showing' ||
-          chatbotWindowStatus == 'toMinimized',
-      },
-      { fullscreen: isFullscreen },
-    ]"
-    v-if="isChatbotOpen"
-  >
-    <div
-      class="chatbot-container--minimized"
-      :class="[
-        { toShowing: chatbotWindowStatus == 'toShowing' },
-        { toMinimized: chatbotWindowStatus == 'toMinimized' },
-      ]"
-    >
+  <section class="chatbot" :class="chatbotClasses" v-if="isChatbotOpen">
+    <div class="chatbot-container--minimized" :class="minimizedContainerClasses">
       <cto />
       <button-show-chat />
       <button-close-chat />
     </div>
 
-    <div
-      class="chatbot-container--showing"
-      :class="[
-        { toMinimized: chatbotWindowStatus == 'toMinimized' },
-        { toShowing: chatbotWindowStatus == 'toShowing' },
-      ]"
-    >
-      <Top-bar />
+    <div class="chatbot-container--showing" :class="showingContainerClasses">
+      <top-bar />
       <chat />
       <chat-options-carousel />
       <chat-input />
@@ -70,6 +42,33 @@ export default {
   },
   computed: {
     ...mapState(["isChatbotOpen", "chatbotWindowStatus", "isFullscreen"]),
+    chatbotClasses() {
+      return [
+        {
+          minimized:
+            this.chatbotWindowStatus == 'minimized' ||
+            this.chatbotWindowStatus == 'toShowing',
+        },
+        {
+          showing:
+            this.chatbotWindowStatus == 'showing' ||
+            this.chatbotWindowStatus == 'toMinimized',
+        },
+        { fullscreen: this.isFullscreen },
+      ]
+    },
+    minimizedContainerClasses() {
+      return [
+        { toShowing: this.chatbotWindowStatus == 'toShowing' },
+        { toMinimized: this.chatbotWindowStatus == 'toMinimized' },
+      ]
+    },
+    showingContainerClasses() {
+      return [
+        { toMinimized: this.chatbotWindowStatus == 'toMinimized' },
+        { toShowing: this.chatbotWindowStatus == 'toShowing' },
+      ]
+    }
   },
   methods: {
     ...mapMutations(["toggleChatbotWindowStatus"]),
