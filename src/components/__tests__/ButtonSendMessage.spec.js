@@ -65,7 +65,7 @@ describe("ButtonSendMessage", () => {
     });
 
     const button = wrapper.find(".btn--send-message");
-    
+
     button.trigger("click");
     expect(actions.processUserMessage).toHaveBeenCalled();
   });

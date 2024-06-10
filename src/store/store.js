@@ -66,21 +66,21 @@ export const store = createStore({
     },
   },
   actions: {
-    toggleChatbotWindowStatus({commit, state}) {
+    toggleChatbotWindowStatus({ commit, state }) {
       const currentStatus = state.chatbotWindowStatus;
       switch (currentStatus) {
         case "minimized":
-          commit('setChatbotWindowStatus', 'toShowing')
+          commit("setChatbotWindowStatus", "toShowing");
           setTimeout(() => {
-            commit('setChatbotWindowStatus', 'showing')
+            commit("setChatbotWindowStatus", "showing");
           }, 100);
           break;
 
         case "showing":
-          commit('setChatbotWindowStatus', 'toMinimized')
+          commit("setChatbotWindowStatus", "toMinimized");
           state.isFullscreen = false;
           setTimeout(() => {
-            commit('setChatbotWindowStatus', 'minimized')
+            commit("setChatbotWindowStatus", "minimized");
           }, 400);
           break;
 
@@ -89,13 +89,11 @@ export const store = createStore({
       }
     },
     async processResponse({ commit, state }) {
-
       setTimeout(() => {
         commit("setIsProcessing", true);
       }, 750);
 
       const getResponse = () => {
-
         return new Promise((resolve) => {
           setTimeout(() => {
             const randomIndex = Math.floor(
@@ -110,7 +108,6 @@ export const store = createStore({
             resolve(formattedResponse);
           }, 3000);
         });
-
       };
 
       const response = await getResponse();

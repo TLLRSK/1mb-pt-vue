@@ -26,11 +26,11 @@ export default {
     messageClasses() {
       return [
         {
-          'message--user': this.author === 'user',
-          'message--chatbot': this.author === 'chatbot',
+          "message--user": this.author === "user",
+          "message--chatbot": this.author === "chatbot",
         },
-      ]
-    }
-  }
+      ];
+    },
+  },
 };
 </script>

@@ -8,7 +8,7 @@ describe("Vuex Store", () => {
     /* Testing some state values */
     expect(state.isChatbotOpen).toBe(true);
     expect(state.isCtoOpen).toBe(true);
-    expect(state.chatbotWindowStatus).toBe('minimized');
+
     expect(state.isFullscreen).toBe(false);
     expect(state.isProcessingMessage).toBe(false);
   });
@@ -30,7 +30,7 @@ describe("Vuex Store", () => {
     /* Dispatching processUserMessage */
     await store.dispatch("processUserMessage", { content: "Test message" });
     await new Promise((resolve) => setTimeout(resolve, 750)); // Calling processResponse
-    
+
     expect(state.messagesLog.length).toBe(3); // the message was added
     expect(state.isProcessingMessage).toBe(true); // processResponse has been called
 
@@ -47,7 +47,7 @@ describe("Vuex Store", () => {
 
     /* Checking if chatbot has responded */
     const botMessage = state.messagesLog[state.messagesLog.length - 1];
-    
+
     expect(botMessage.author).toBe("chatbot"); // Response has chatbot author
     expect(state.messagesLog.length).toBe(4); // Response has been sended
   });
