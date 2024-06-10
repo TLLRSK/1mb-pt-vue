@@ -6,7 +6,7 @@
 </template>
 <script>
 import { ButtonCloseCto } from "../../data";
-import { mapState, mapActions } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 export default {
   components: {
     ButtonCloseCto,
@@ -16,6 +16,7 @@ export default {
   },
   methods: {
     ...mapActions(["toggleChatbotWindowStatus"]),
+    ...mapMutations(["closeCto"]),
   },
   mounted() {
     setTimeout(() => {
