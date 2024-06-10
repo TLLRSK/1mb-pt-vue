@@ -68,6 +68,7 @@ export const store = createStore({
   actions: {
     toggleChatbotWindowStatus({ commit, state }) {
       const currentStatus = state.chatbotWindowStatus;
+      state.isCtoOpen ? commit("closeCto") : null;
       switch (currentStatus) {
         case "minimized":
           commit("setChatbotWindowStatus", "toShowing");
@@ -122,12 +123,6 @@ export const store = createStore({
       };
       commit("sendMessage", formattedMessage);
       dispatch("processResponse");
-    },
-    showChatWindow({ commit, state }) {
-      if (state.isCtoOpen) {
-        commit("closeCto");
-      }
-      commit("toggleMinimized");
     },
     checkFirstVisit({ state }) {
       if (state.isFirstVisit) {
