@@ -12,7 +12,7 @@ export const store = createStore({
       isChatbotOpen: true,
       chatbotWindowStatus: "minimized",
       isCtoOpen: true,
-      isFullScreen: false,
+      isFullscreen: false,
       isProcessingMessage: false,
       botProfile: botProfileData,
       dropdownMenuOptions: dropdownMenuOptionsData,
@@ -44,26 +44,8 @@ export const store = createStore({
     closeChatbot(state) {
       state.isChatbotOpen = false;
     },
-    toggleChatbotWindowStatus(state) {
-      const currentStatus = state.chatbotWindowStatus;
-      switch (currentStatus) {
-        case "minimized":
-          state.chatbotWindowStatus = "toShowing";
-          setTimeout(() => {
-            state.chatbotWindowStatus = "showing";
-          }, 100);
-          break;
-
-        case "showing":
-          state.chatbotWindowStatus = "toMinimized";
-          setTimeout(() => {
-            state.chatbotWindowStatus = "minimized";
-          }, 400);
-          break;
-
-        default:
-          break;
-      }
+    setChatbotWindowStatus(state, newStatus) {
+      state.chatbotWindowStatus = newStatus;
     },
     toggleFullscreen(state) {
       state.isFullscreen = !state.isFullscreen;
@@ -84,12 +66,36 @@ export const store = createStore({
     },
   },
   actions: {
+    toggleChatbotWindowStatus({commit, state}) {
+      const currentStatus = state.chatbotWindowStatus;
+      switch (currentStatus) {
+        case "minimized":
+          commit('setChatbotWindowStatus', 'toShowing')
+          setTimeout(() => {
+            commit('setChatbotWindowStatus', 'showing')
+          }, 100);
+          break;
+
+        case "showing":
+          commit('setChatbotWindowStatus', 'toMinimized')
+          state.isFullscreen = false;
+          setTimeout(() => {
+            commit('setChatbotWindowStatus', 'minimized')
+          }, 400);
+          break;
+
+        default:
+          break;
+      }
+    },
     async processResponse({ commit, state }) {
+
       setTimeout(() => {
         commit("setIsProcessing", true);
       }, 750);
 
       const getResponse = () => {
+
         return new Promise((resolve) => {
           setTimeout(() => {
             const randomIndex = Math.floor(
@@ -104,13 +110,13 @@ export const store = createStore({
             resolve(formattedResponse);
           }, 3000);
         });
+
       };
 
       const response = await getResponse();
 
       commit("sendResponse", response);
     },
-
     processUserMessage({ dispatch, commit }, message) {
       const formattedMessage = {
         author: "user",
@@ -120,7 +126,6 @@ export const store = createStore({
       commit("sendMessage", formattedMessage);
       dispatch("processResponse");
     },
-
     showChatWindow({ commit, state }) {
       if (state.isCtoOpen) {
         commit("closeCto");

@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   computed: {
     ...mapState(["botProfile"]),
   },
   methods: {
-    ...mapMutations(["toggleChatbotWindowStatus"]),
+    ...mapActions(["toggleChatbotWindowStatus"]),
   },
 };
 </script>
