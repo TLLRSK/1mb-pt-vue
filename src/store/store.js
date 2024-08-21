@@ -24,7 +24,7 @@ export const store = createStore({
           author: "chatbot",
           type: "default",
           content:
-            "Even you are a personalbar, company or institution, tell me about your interests or namedItems. I'm here to help 🌐"
+            "Even you are a person, company or institution, tell me about your interests or needs. I'm here to help 🌐"
         },
       ],
       currentUserMessage: {
