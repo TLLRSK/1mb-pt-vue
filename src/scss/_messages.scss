@@ -11,18 +11,17 @@
 .chatbot.fullscreen {
   .message {
     @include mq-720 {
-        max-width: 40rem;
+        max-width: 32rem;
     }
     @include mq-1024 {
-        max-width: 52rem;
-    }
-    @include mq-1920 {
-        max-width: 64rem;
+      max-width: 36rem;
     }
   }
 }
 
 .message {
+  box-shadow: 0px 0px 12px -8px $black;
+
   &--user {
     text-align: right;
     background-color: $main;
@@ -39,6 +38,7 @@
   &--image-card {
     padding: $p--s;
     cursor: grab;
+
     .article {
       display: flex;
       flex-direction: column;
@@ -51,12 +51,15 @@
       .title {
         text-transform: uppercase;
       }
+
       .link {
         color: $gray--200;
         font-weight: 600;
+        width: fit-content;
   
         &:hover {
-          text-decoration: underline;
+          color: $main;
+          animation: bounceUp .6s linear;
         }
       }
     }

@@ -4,7 +4,12 @@
     flex: 1;
     padding: $p--l $p--l $p--l*1.2 $p--l;
     gap: 1.6rem;
-    background-color: $gray;
+    background-color: $white--100;
+    backdrop-filter: blur($unit--s);
+    background: linear-gradient($white--100, $white--200 50%);
     overflow-y: scroll;
     scroll-behavior: smooth;
+    @include mq-1920 {
+        padding: $p--l 8% $p--l*1.2 8%;
+    }
 }

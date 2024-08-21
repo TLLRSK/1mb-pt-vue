@@ -11,7 +11,7 @@ export default {
     IconClose,
   },
   methods: {
-    ...mapMutations(["toggleMinimized", "closeChatbot"]),
+    ...mapMutations(["closeChatbot"]),
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="dropdown-menu-container">
-    <button-toggle-dropdown @togglingMenu="toggleMenu" />
+    <button-toggle-dropdown @togglingMenu="toggleMenu"/>
 
     <ul class="dropdown-menu" @mouseleave="closeMenu" ref="dropdownMenu">
       <li

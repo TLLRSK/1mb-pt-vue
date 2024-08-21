@@ -1,6 +1,5 @@
 import { createStore } from "vuex";
 import {
-  botProfileData,
   dropdownMenuOptionsData,
   botResponsesData,
 } from "../data";
@@ -14,25 +13,22 @@ export const store = createStore({
       isCtoOpen: true,
       isFullscreen: false,
       isProcessingMessage: false,
-      botProfile: botProfileData,
       dropdownMenuOptions: dropdownMenuOptionsData,
       messagesLog: [
         {
           author: "chatbot",
           type: "default",
-          content: "¡Hola! Soy Millie de 1MillionBot 🙋🏽‍♀️",
+          content: "Hi! I'm your virtual assistant! 🙋🏽‍♀️",
         },
         {
           author: "chatbot",
           type: "default",
           content:
-            "Ya seas particular, empresa o institución, cuéntame tus intereses o necesidades. Así, podré ayudarte mejor. 🌐",
+            "Even you are a personalbar, company or institution, tell me about your interests or namedItems. I'm here to help 🌐"
         },
       ],
       currentUserMessage: {
         content: "",
-        author: "user",
-        type: "default",
       },
       botResponses: botResponsesData,
     };

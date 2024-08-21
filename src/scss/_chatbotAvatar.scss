@@ -1,0 +1,44 @@
+[class^="chatbot-avatar"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-avatar--full {
+    .piece--1 {
+        width: 0;
+        border-bottom: $unit--m solid $main;
+        border-left: $unit--s + $unit--m solid transparent;
+        border-right: $unit--s + $unit--m solid transparent;
+    }
+    .piece--2 {
+        width: ($unit--s + $unit--m)*2;
+        height: $unit--m*2;
+        background-color: $main;
+    }
+    .piece--3 {
+        width: 0;
+        border-top: $unit--m solid $main;
+        border-left: $unit--s + $unit--m solid transparent;
+        border-right: $unit--s + $unit--m solid transparent;
+    }
+}
+
+.chatbot-avatar--small {
+    .piece--1 {
+        width: 0;
+        border-bottom: $unit--s*.5 solid $main;
+        border-left: $unit--s*.75 solid transparent;
+        border-right: $unit--s*.75 solid transparent;
+    }
+    .piece--2 {
+        width: $unit--s*1.50;
+        height: $unit--s*.75;
+        background-color: $main;
+    }
+    .piece--3 {
+        width: 0;
+        border-top: $unit--s*.5 solid $main;
+        border-left: $unit--s*.75 solid transparent;
+        border-right: $unit--s*.75 solid transparent;
+    }
+}

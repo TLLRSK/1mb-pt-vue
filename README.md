@@ -172,4 +172,3 @@ Component has TWO status:
     - Some Vue
     - Some Vuex
     - Testing a bit with Vitest
-    

@@ -8,13 +8,15 @@
     padding: $p--m;
     border-radius: $rounded--m;
     border-bottom-right-radius: 0;
+    transition: transform .4s ease-in-out;
 
     &-message {
         text-align: left;
     }
     &:hover {
-        background-color: $gray--100;
+        transform: translateY(-4px);
     }
+
     @include mq-480 {
         width: max-content;
     }

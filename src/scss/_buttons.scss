@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
 
     &--minimize,
     &--toggle-fullscreen,
@@ -44,18 +45,27 @@
         width: 4.8rem;
         padding: $p--s $p--s;
         border-radius: $round;
-        transition: padding .2s ease-in-out, background-color .2s ease-in-out;
+        background-color: $main;
+
         path {
-            fill: $main;
+            fill: $white;
+            @include mq-480 {
+                fill: $main;
+            }
         }
+
         &[disabled]{
+            background-color: $white;
             cursor: default;
             path {
                 fill: $gray--100;
             }
         }
+
         &:not([disabled]) {
             @include mq-480 {
+                background-color: $white;
+               
                 &:hover {
                     background-color: $main;
                     path {
@@ -67,31 +77,51 @@
     }
     &--show-chatbot {
         overflow: hidden;
+        width: $unit--l*5;
+        height: $unit--l*5;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        padding: $p--s $p--l;
         border-radius: 50%;
-        -webkit-box-shadow: 0px 0px 18px -8px $black;
-        -moz-box-shadow: 0px 0px 18px -8px $black;
-        box-shadow: 0px 0px 18px -8px $black;
+
+        [class^="chatbot-avatar"] {
+            opacity: .8;
+        }
+        &:hover {
+            [class^="chatbot-avatar"] {
+                opacity: 1;
+                animation: spin 4s normal forwards;
+            }
+        }
     }
     &--close-chatbot {
+        height: fit-content;
+        background-color: $white;
         position: absolute;
-        top: -$margin--m*2;
-        right: 0;
-        background-color: $gray--200;
+        padding: $p--s*.5;
+        top: -$unit--m;
         border-radius: 50%;
+        transition: background-color .1s ease-in-out;
         path {
-            fill: $white;
+            fill: $gray--200;
         }
         &:hover {
             background-color: $main;
+            path {
+                fill: $white;
+            }
         }
     }
     &--close-cto {
         border-radius: 50%;
         path {
-            fill: $black;
+            fill: $gray--200;
         }
         &:hover { 
-            background-color: $black;
+            background-color: $main;
+            fill: $white;
             path {
                 fill: $white;
             }
@@ -106,13 +136,14 @@
         border-radius: $rounded--m;
         opacity: .6;
         border: 1px solid $gray--200;
-        -webkit-box-shadow: 0px 0px 2px 1px $gray--200;
-        -moz-box-shadow: 0px 0px 2px 1px $gray--200;
         box-shadow: 0px 0px 2px 1px $gray--200;
+        transition: color .1s ease-in-out, border-color .1s ease-in-out, box-shadow .1s ease-in-out;
         @include mq-480 {
             &:hover {
                 opacity: 1;
-                border: 1px solid $black;
+                color: $main;
+                border-color: $main;
+                box-shadow: 0px 0px 3px 1px $main;
             }
         }
     }

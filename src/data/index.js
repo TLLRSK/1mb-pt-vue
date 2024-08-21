@@ -1,48 +1,43 @@
-export const botProfileData = {
-  imgUrl: "images/chatbot-pfp.gif",
-  name: "Millie",
-};
 export const dropdownMenuOptionsData = [
   { text: "Forget user data" },
   { text: "Change language" },
   { text: "Access the privacy policy" },
 ];
 export const chatOptionsList = [
-  { content: "Qué es un chatbot" },
-  { content: "Para qué sirve" },
-  { content: "Qué es 1millionbot" },
-  { content: "Qué es una IA" },
+  { content: "Hi" },
+  { content: "Does this really work?" },
+  { content: "What is this app" },
+  { content: "Is this an AI" },
 ];
 export const botResponsesData = [
   {
     type: "default",
-    content: "random response from chatbot",
+    content: "Random response from chatbot",
   },
   {
     type: "default",
-    content: "another random response",
+    content: "Another kind of random response from chatbot!",
   },
-
   {
     type: "imageCard",
     content: [
       {
-        imgUrl: "images/article-image.webp",
+        imgUrl: "https://www.researchgate.net/profile/Alaa-Shabeeb-2/publication/311936981/figure/fig7/AS:444251172544519@1482929141640/Figure-38-Geometric-Schema-of-the-Manipulator.png",
         title: "article title",
         text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
-        articleUrl: "https://placehold.jp/150x150.png",
+        articleUrl: "https://www.researchgate.net/figure/Figure-38-Geometric-Schema-of-the-Manipulator_fig7_311936981",
       },
       {
-        imgUrl: "images/article-image.webp",
+        imgUrl: "https://www.mdpi.com/machines/machines-11-00952/article_deploy/html/images/machines-11-00952-g001.png",
         title: "article title",
         text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
-        articleUrl: "https://placehold.jp/150x150.png",
+        articleUrl: "https://www.mdpi.com/2075-1702/11/10/952",
       },
       {
-        imgUrl: "images/article-image.webp",
+        imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Albedo_geometrica_-_schema.PNG/724px-Albedo_geometrica_-_schema.PNG?20151001112832",
         title: "article title",
         text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea, dolores nisi sed numquam a.",
-        articleUrl: "https://placehold.jp/150x150.png",
+        articleUrl: "https://commons.wikimedia.org/wiki/File:Albedo_geometrica_-_schema.PNG",
       },
     ],
   },
@@ -56,6 +51,9 @@ export { default as IconMinimize } from "../components/icons/IconMinimize.vue";
 export { default as IconSend } from "../components/icons/IconSend.vue";
 export { default as IconFullscreen } from "../components/icons/IconFullscreen.vue";
 export { default as IconFullscreenOff } from "../components/icons/IconFullscreenOff.vue";
+
+// Chatbot Avatar
+export { default as ChatbotAvatar } from "../components/ChatbotAvatar/ChatbotAvatar.vue";
 
 // Buttons
 export { default as ButtonCloseCto } from "../components/buttons/ButtonCloseCto.vue";

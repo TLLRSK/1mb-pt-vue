@@ -3,29 +3,22 @@
     <button-fullscreen />
     <button-minimize-chat />
     <div class="chatbot-profile">
-      <img
-        class="chatbot-img"
-        :src="botProfile.imgUrl"
-        :alt="botProfile.name"
-      />
-      <p class="chatbot-name">{{ botProfile.name }}</p>
+      <chatbot-avatar size="small"/>
     </div>
     <dropdown-menu />
   </header>
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
-import { DropdownMenu, ButtonMinimizeChat, ButtonFullscreen } from "../../data";
+import { mapMutations } from "vuex";
+import { DropdownMenu, ButtonMinimizeChat, ButtonFullscreen, ChatbotAvatar } from "../../data";
 
 export default {
   components: {
     DropdownMenu,
     ButtonMinimizeChat,
     ButtonFullscreen,
-  },
-  computed: {
-    ...mapState(["botProfile"]),
+    ChatbotAvatar,
   },
   methods: {
     ...mapMutations(["toggleMinimized"]),

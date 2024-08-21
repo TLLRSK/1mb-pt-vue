@@ -1,3 +1,15 @@
 .anim--fading {
     animation: fading .5s alternate infinite;
 }
+.anim--spin {
+    animation: spin 4s infinite;
+}
+.anim--bounce {
+    animation: bounce .2s linear;
+}
+.anim--spin-bounce {
+    animation: spin 4s infinite, bounce .4s linear;
+}
+.anim--scale-bounce {
+    animation: scaleAndBounce 1s linear;
+}

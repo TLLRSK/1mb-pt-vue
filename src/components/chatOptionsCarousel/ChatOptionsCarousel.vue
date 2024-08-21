@@ -5,7 +5,7 @@
       v-for="(option, index) in chatOptionsList"
       :key="index"
     >
-      <button-chat-option :option="option"></button-chat-option>
+      <button-chat-option :option="option"/>
     </swiper-slide>
   </swiper-container>
 </template>
@@ -53,6 +53,12 @@ export default {
         }
         .swiper-button-prev:hover, .swiper-button-next:hover {
           opacity: 1;
+          border-color: oklch(48.82% 0.264 285.88);
+          svg {
+            path {
+              fill: oklch(48.82% 0.264 285.88);
+            }
+          }
         }
 
         .swiper-button-next {

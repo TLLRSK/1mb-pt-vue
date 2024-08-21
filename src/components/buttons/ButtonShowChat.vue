@@ -1,15 +1,14 @@
 <template>
   <button class="btn btn--show-chatbot" @click="toggleChatbotWindowStatus">
-    <img :src="botProfile.imgUrl" :alt="botProfile.name" />
+    <chatbot-avatar size="full" />
   </button>
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapActions } from "vuex";
+import { ChatbotAvatar } from '../../data';
 export default {
-  computed: {
-    ...mapState(["botProfile"]),
-  },
+  components: { ChatbotAvatar },
   methods: {
     ...mapActions(["toggleChatbotWindowStatus"]),
   },

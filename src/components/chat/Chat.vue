@@ -1,15 +1,18 @@
 <template>
   <ul class="chat" ref="messagesContainer">
     <template v-for="(message, index) in messagesLog" :key="index">
+
       <message-default
         v-if="message.type === 'default'"
         :message-author="message.author"
         :message-content="message.content"
       />
+
       <message-image-card
         v-if="message.type === 'imageCard'"
         :content="message.content"
       />
+      
     </template>
     <message-writing v-if="isProcessingMessage" />
   </ul>

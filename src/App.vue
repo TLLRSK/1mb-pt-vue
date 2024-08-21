@@ -1,7 +1,11 @@
 <template>
-  <section class="chatbot" :class="chatbotClasses" v-if="isChatbotOpen">
-    <div
-      class="chatbot-container--minimized"
+ 
+  <section class="chatbot"
+    :class="chatbotClasses"
+    v-if="this.status !== 'closed'"
+  >
+    <div 
+      class="chatbot-container--minimized" 
       :class="minimizedContainerClasses"
     >
       <cto />
@@ -9,18 +13,22 @@
       <button-close-chat />
     </div>
 
-    <div class="chatbot-container--showing" :class="showingContainerClasses">
+    <div 
+      class="chatbot-container--showing" 
+      :class="showingContainerClasses"
+    >
       <top-bar />
       <chat />
       <chat-options-carousel />
       <chat-input />
       <chat-footer />
     </div>
+
   </section>
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 import {
   ButtonCloseChat,
   ButtonShowChat,
@@ -43,8 +51,14 @@ export default {
     ChatOptionsCarousel,
     ChatFooter,
   },
+  data() {
+    return {
+      status: 'open',
+    }
+  },
   computed: {
     ...mapState(["isChatbotOpen", "chatbotWindowStatus", "isFullscreen"]),
+
     chatbotClasses() {
       return [
         {
@@ -58,6 +72,7 @@ export default {
             this.chatbotWindowStatus == "toMinimized",
         },
         { fullscreen: this.isFullscreen },
+        { "closing": this.status === 'closing' },
       ];
     },
     minimizedContainerClasses() {
@@ -74,8 +89,20 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["toggleChatbotWindowStatus"]),
     ...mapActions(["checkFirstVisit"]),
+  },
+  watch: {
+    isChatbotOpen(newValue) {
+      if (newValue === false) {
+        console.log(newValue)
+        this.status = 'closing';
+        setTimeout(() => {
+          this.status = 'closed';
+        }, 400)
+      } else {
+        console.log(newValue)
+      }
+    },
   },
   mounted() {
     this.checkFirstVisit();

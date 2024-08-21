@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn--chat-option" @click="sendOption">
+  <button class="btn btn--chat-option" :class="buttonClasses" @click="sendOption">
     {{ option.content }}
   </button>
 </template>
@@ -14,9 +14,23 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      isAnimating: false,
+    }
+  },
+  computed: {
+    buttonClasses() {
+      return { "anim--scale-bounce": this.isAnimating }
+    },
+  },
   methods: {
     ...mapActions(["processUserMessage"]),
     sendOption() {
+      this.isAnimating = true;
+      setTimeout(() => {
+        this.isAnimating = false;
+      }, 1000)
       this.processUserMessage(this.option);
     },
   },

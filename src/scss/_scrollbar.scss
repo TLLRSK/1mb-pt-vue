@@ -1,0 +1,14 @@
+::-webkit-scrollbar {
+    width: $unit--m;
+}
+::-webkit-scrollbar-track {
+    background: $white; 
+}
+::-webkit-scrollbar-thumb {
+    background: $gray--200;
+    border-radius: $unit--s;
+    cursor: grab;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: $main; 
+}

@@ -1,5 +1,5 @@
 <template>
   <li class="message message--chatbot anim--fading">
-    <p>Escribiendo respuesta...</p>
+    <p>Writing...</p>
   </li>
 </template>
