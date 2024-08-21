@@ -155,8 +155,6 @@ Try some components with Vitest for learning purposes ✔
 - Chat ✔
 - Store.js ✔
 
-<br>
-
 ## PROBLEMS FOUNDED 🔴
 
 ### Styling Swiper Element.
@@ -166,8 +164,6 @@ Try some components with Vitest for learning purposes ✔
         - appending a child to shadowRoot element
 
     - Find better solution ✍
-
-<br>
 
 ## What I've learned 📗
 #### Vue basics
