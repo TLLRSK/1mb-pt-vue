@@ -1,4 +1,4 @@
-Brieffing:
+## Brieffing:
 Create a chatbot window
 
 Framework: Vue 3.0;
@@ -15,10 +15,9 @@ Requisites:
 
 - The design does not have to be super sophisticated, but it must at least responsive and full-screen on mobile phones.
 
+<br>
 
-
-🔨 TOOLS 🔨
-
+## TOOLS 🔨
 - Vite
 - Vue
 - Vuex
@@ -27,104 +26,107 @@ Requisites:
 - Prettier
 - Sass
 
+<br>
 
-🧩 COMPONENTS 
+## COMPONENTS 🧩  
 
-Component has TWO status: 
+Chatbot has TWO status: MINIMIZED & SHOWING
 
-    1. Minimized
-    2. Showing
-    
+### 1. Minimized chatbot container ✔
 
-1. Minimized chatbot container ✔
+#### Call to action button ✔
+- Close Cto button
 
-    - Call to action button ✔
-        - Close Cto button
+#### Show chatbot button ✔
+- Bot image
 
-    - Show chatbot button ✔
-        - Bot image
+#### Close chatbot button ✔
 
-    - Close chatbot button ✔
+<br>
 
-2. Showing chatbot container ✔
+### 2. Showing chatbot container ✔
 
-    - Topbar ✔
-        1. Minimize window button ✔
-        2. Maximize window button ✔
-        3. Botprofile ✔
-            - botName
-            - botImage
+#### Topbar ✔
+    - Minimize window button ✔
+    - Maximize window button ✔
+    - Botprofile ✔
+        - botName
+        - botImage
 
-    - Dropdown Menu ✔
-        1. Toggle dropdown button
-        2. Dropdown menu item
+#### Dropdown Menu ✔
+    - Toggle dropdown button
+    - Dropdown menu item
 
-    - Chat ✔
-        - Messages ✔
-            1. user message
-            2. bot message
-            3. image card message
-                - image 
-                - text 
-                - link button 
-                - swiper carousel
-            4. writting message
+#### Chat ✔
 
-        - Chat options carousel ✔
-            2. swiper
-            1. option button
-            3. swiper navigation buttons
+#### Messages ✔
 
-        - Chat input ✔
-            1. input message text
-            2. send message button
-                - disabled & enabled state
+    1. User message
+    2. Bot message
+    3. Image card message
+        - image 
+        - text 
+        - link button 
+        - swiper carousel
+    4. Writting message
 
-    - Footer ✔
+### Chat options carousel ✔
 
+    2. Swiper
+    1. Option button
+    3. Swiper navigation buttons
 
-⌨ FUNCTIONS ⌨
+### Chat input ✔
 
-- Close Cto ✔
+    1. Input message text
+    2. Send message button
+        - disabled & enabled state
+
+### Footer ✔
+
+<br>
+
+## FUNCTIONS ⌨
+
+### Close Cto ✔
     - Setting a countback
     - Showing chatbot window
 
-- Showing Cto only on first visit ✔
+### Showing Cto only on first visit ✔
     - Check if there's a session storaged
 
-- Toggle Chatbot Window Status ✔
+### Toggle Chatbot Window Status ✔
     - Four status:
         1. Minimized
         2. ToShowing
         3. Showing
         4. ToMinimized
 
-- Close Chatbot ✔
+### Close Chatbot ✔
 
-- Send messages ✔
-    - User message ✔
-        - Write
-        - Send
-        - Process message
-        - Display message
+### User message ✔
+    - Write
+    - Send
+    - Process message
+    - Display message
 
-    - Processing bot response when user sends a message ✔
-        - Turn is processing to TRUE
-        - Choose randomly a response from responses array
-        - Turn is processing to FALSE
-        - Push response into messages log
-        - Displays response
+### Processing bot response when user sends a message ✔
+    - Turn is processing to TRUE
+    - Choose randomly a response from responses array
+    - Turn is processing to FALSE
+    - Push response into messages log
+    - Displays response
 
-    - Writing message ✔
-        - Showing component while response is processing 
+### Writing message ✔
+    - Showing component while response is processing 
 
-    - Send chat option as user message
+### Send chat option as user message ✔
 
-- Scrolling down the chat ✔
+### Scrolling down the chat ✔
     - On new message
     - On showing chatbot window
 
-- Toggle Dropdown ✔
+### Toggle Dropdown ✔
     - Toggles ON and OFF when clicking button
 
     - Toggle OFF on:
@@ -132,43 +134,50 @@ Component has TWO status:
         2. Clicking out
         3. Clicking dropdown menu item
 
-- Fullscreen Chatbot window ✔
-    - Quitting fullscreen on minimizing chatbot window
+### Fullscreen Chatbot window ✔
+    - Toggling off fullscreen on minimizing chatbot window
     
-- Try it with Vuex ✔
+<br>
 
-- Close Chatbot ✔
+## TESTING 🧪
 
+Try some components with Vitest for learning purposes ✔ 
 
-🧪 TESTING 🧪
+#### Install:
 
-- Try some components with Vitest for learning purposes 
-
-    Install:
-
-    - Vitest
-    - Vue-Utils
-    - Happy DOM
+- Vitest
+- Vue-Utils
+- Happy DOM
     
-    Test:
+#### Test:
 
-    - Send message button
-    - Chat
-    - Store.js
+- Send message button ✔
+- Chat ✔
+- Store.js ✔
 
+<br>
 
-🔴 PROBLEMS FOUNDED 🔴
+## PROBLEMS FOUNDED 🔴
 
-- Styling Swiper Element.
-    1. Tried to inject style (didn't work)
-    2. Overrided style by:
+### Styling Swiper Element.
+    - Tried to inject style (didn't work)
+    - Overrided stylesheet by:
         - style attribute
         - appending a child to shadowRoot element
 
-- Find better solution ✍
+    - Find better solution ✍
 
+<br>
 
-📗 What I've learned 📗
-    - Some Vue
-    - Some Vuex
-    - Testing a bit with Vitest
+## What I've learned 📗
+#### Vue basics
+    - Vue App lifecycle
+    - Binding attributes, classes and events
+    - Custom events
+    - Components
+
+#### Vuex Basics
+    - Creating store
+    - Using state, mutations and actions in other components
+
+#### Testing with Vitest and Vue Utils
