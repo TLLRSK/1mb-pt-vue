@@ -1,7 +1,7 @@
 <template>
   <button class="cto" v-if="isCtoOpen && isFirstVisit" @click="toggleChatbotWindowStatus">
     <button-close-cto />
-    <p class="cto-message">¿En qué puedo ayudarte?</p>
+    <p class="cto-message">How can I help you?</p>
   </button>
 </template>
 <script>
